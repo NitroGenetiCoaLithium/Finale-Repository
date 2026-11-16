@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -40,11 +41,21 @@
             label1.TabIndex = 0;
             label1.Text = "padelete nalang to testing lang pag may gagawa na";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(241, 230);
+            label2.Name = "label2";
+            label2.Size = new Size(200, 20);
+            label2.TabIndex = 1;
+            label2.Text = "na connect kona sa database";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
@@ -55,5 +66,6 @@
         #endregion
 
         private Label label1;
+        private Label label2;
     }
 }
