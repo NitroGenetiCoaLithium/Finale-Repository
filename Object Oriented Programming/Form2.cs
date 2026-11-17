@@ -75,5 +75,10 @@ namespace Object_Oriented_Programming
 
             this.Hide();
         }
+
+        private void lblAlreadyHaveAnAccount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

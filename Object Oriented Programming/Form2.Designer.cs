@@ -30,10 +30,15 @@
         {
             pctSignUp = new PictureBox();
             pnlSignUp = new Panel();
+            chkTermsAndConditions = new CheckBox();
+            txtContactNo = new TextBox();
+            lblContactNo = new Label();
+            txtFirstName = new TextBox();
+            lblFirstName = new Label();
+            txtLastName = new TextBox();
+            lblLastName = new Label();
             lblMessageSignUp = new Label();
             lblCreateYourAccount = new Label();
-            txtFullName = new TextBox();
-            lblFullName = new Label();
             btnLogIninSignUp = new Button();
             lblAlreadyHaveAnAccount = new Label();
             btnSignUp = new Button();
@@ -59,10 +64,15 @@
             // pnlSignUp
             // 
             pnlSignUp.BackColor = Color.White;
+            pnlSignUp.Controls.Add(chkTermsAndConditions);
+            pnlSignUp.Controls.Add(txtContactNo);
+            pnlSignUp.Controls.Add(lblContactNo);
+            pnlSignUp.Controls.Add(txtFirstName);
+            pnlSignUp.Controls.Add(lblFirstName);
+            pnlSignUp.Controls.Add(txtLastName);
+            pnlSignUp.Controls.Add(lblLastName);
             pnlSignUp.Controls.Add(lblMessageSignUp);
             pnlSignUp.Controls.Add(lblCreateYourAccount);
-            pnlSignUp.Controls.Add(txtFullName);
-            pnlSignUp.Controls.Add(lblFullName);
             pnlSignUp.Controls.Add(btnLogIninSignUp);
             pnlSignUp.Controls.Add(lblAlreadyHaveAnAccount);
             pnlSignUp.Controls.Add(btnSignUp);
@@ -71,10 +81,69 @@
             pnlSignUp.Controls.Add(txtSignUpEmailAddress);
             pnlSignUp.Controls.Add(lblSignUpEmailAddress);
             pnlSignUp.Controls.Add(lblSignUpValora);
-            pnlSignUp.Location = new Point(660, 85);
+            pnlSignUp.Location = new Point(662, 29);
             pnlSignUp.Name = "pnlSignUp";
-            pnlSignUp.Size = new Size(341, 457);
+            pnlSignUp.Size = new Size(341, 571);
             pnlSignUp.TabIndex = 2;
+            // 
+            // chkTermsAndConditions
+            // 
+            chkTermsAndConditions.AutoSize = true;
+            chkTermsAndConditions.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkTermsAndConditions.Location = new Point(30, 437);
+            chkTermsAndConditions.Name = "chkTermsAndConditions";
+            chkTermsAndConditions.Size = new Size(273, 17);
+            chkTermsAndConditions.TabIndex = 23;
+            chkTermsAndConditions.Text = "I agree to the Terms of Service and Privacy Policy.";
+            chkTermsAndConditions.UseVisualStyleBackColor = true;
+            // 
+            // txtContactNo
+            // 
+            txtContactNo.Location = new Point(30, 298);
+            txtContactNo.Name = "txtContactNo";
+            txtContactNo.Size = new Size(278, 23);
+            txtContactNo.TabIndex = 22;
+            // 
+            // lblContactNo
+            // 
+            lblContactNo.AutoSize = true;
+            lblContactNo.Location = new Point(30, 280);
+            lblContactNo.Name = "lblContactNo";
+            lblContactNo.Size = new Size(96, 15);
+            lblContactNo.TabIndex = 21;
+            lblContactNo.Text = "Contact Number";
+            // 
+            // txtFirstName
+            // 
+            txtFirstName.Location = new Point(30, 242);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(278, 23);
+            txtFirstName.TabIndex = 20;
+            // 
+            // lblFirstName
+            // 
+            lblFirstName.AutoSize = true;
+            lblFirstName.Location = new Point(30, 224);
+            lblFirstName.Name = "lblFirstName";
+            lblFirstName.Size = new Size(64, 15);
+            lblFirstName.TabIndex = 19;
+            lblFirstName.Text = "First Name";
+            // 
+            // txtLastName
+            // 
+            txtLastName.Location = new Point(30, 187);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(278, 23);
+            txtLastName.TabIndex = 18;
+            // 
+            // lblLastName
+            // 
+            lblLastName.AutoSize = true;
+            lblLastName.Location = new Point(30, 169);
+            lblLastName.Name = "lblLastName";
+            lblLastName.Size = new Size(63, 15);
+            lblLastName.TabIndex = 17;
+            lblLastName.Text = "Last Name";
             // 
             // lblMessageSignUp
             // 
@@ -96,25 +165,9 @@
             lblCreateYourAccount.TabIndex = 15;
             lblCreateYourAccount.Text = "Create Your Account";
             // 
-            // txtFullName
-            // 
-            txtFullName.Location = new Point(30, 181);
-            txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(278, 23);
-            txtFullName.TabIndex = 14;
-            // 
-            // lblFullName
-            // 
-            lblFullName.AutoSize = true;
-            lblFullName.Location = new Point(30, 163);
-            lblFullName.Name = "lblFullName";
-            lblFullName.Size = new Size(61, 15);
-            lblFullName.TabIndex = 13;
-            lblFullName.Text = "Full Name";
-            // 
             // btnLogIninSignUp
             // 
-            btnLogIninSignUp.Location = new Point(174, 407);
+            btnLogIninSignUp.Location = new Point(174, 528);
             btnLogIninSignUp.Name = "btnLogIninSignUp";
             btnLogIninSignUp.Size = new Size(75, 23);
             btnLogIninSignUp.TabIndex = 10;
@@ -125,18 +178,19 @@
             // lblAlreadyHaveAnAccount
             // 
             lblAlreadyHaveAnAccount.AutoSize = true;
-            lblAlreadyHaveAnAccount.Location = new Point(30, 411);
+            lblAlreadyHaveAnAccount.Location = new Point(30, 532);
             lblAlreadyHaveAnAccount.Name = "lblAlreadyHaveAnAccount";
             lblAlreadyHaveAnAccount.Size = new Size(142, 15);
             lblAlreadyHaveAnAccount.TabIndex = 9;
             lblAlreadyHaveAnAccount.Text = "Already have an account?";
+            lblAlreadyHaveAnAccount.Click += lblAlreadyHaveAnAccount_Click;
             // 
             // btnSignUp
             // 
             btnSignUp.BackColor = Color.DarkGreen;
             btnSignUp.FlatStyle = FlatStyle.Popup;
             btnSignUp.ForeColor = Color.White;
-            btnSignUp.Location = new Point(30, 342);
+            btnSignUp.Location = new Point(30, 475);
             btnSignUp.Name = "btnSignUp";
             btnSignUp.Size = new Size(278, 33);
             btnSignUp.TabIndex = 8;
@@ -145,7 +199,7 @@
             // 
             // txtSignUpPassword
             // 
-            txtSignUpPassword.Location = new Point(30, 294);
+            txtSignUpPassword.Location = new Point(30, 408);
             txtSignUpPassword.Name = "txtSignUpPassword";
             txtSignUpPassword.Size = new Size(278, 23);
             txtSignUpPassword.TabIndex = 6;
@@ -153,7 +207,7 @@
             // lblSignUpPassword
             // 
             lblSignUpPassword.AutoSize = true;
-            lblSignUpPassword.Location = new Point(30, 276);
+            lblSignUpPassword.Location = new Point(30, 390);
             lblSignUpPassword.Name = "lblSignUpPassword";
             lblSignUpPassword.Size = new Size(57, 15);
             lblSignUpPassword.TabIndex = 5;
@@ -161,7 +215,7 @@
             // 
             // txtSignUpEmailAddress
             // 
-            txtSignUpEmailAddress.Location = new Point(30, 235);
+            txtSignUpEmailAddress.Location = new Point(30, 352);
             txtSignUpEmailAddress.Name = "txtSignUpEmailAddress";
             txtSignUpEmailAddress.Size = new Size(278, 23);
             txtSignUpEmailAddress.TabIndex = 4;
@@ -169,7 +223,7 @@
             // lblSignUpEmailAddress
             // 
             lblSignUpEmailAddress.AutoSize = true;
-            lblSignUpEmailAddress.Location = new Point(30, 217);
+            lblSignUpEmailAddress.Location = new Point(30, 334);
             lblSignUpEmailAddress.Name = "lblSignUpEmailAddress";
             lblSignUpEmailAddress.Size = new Size(81, 15);
             lblSignUpEmailAddress.TabIndex = 3;
@@ -214,8 +268,13 @@
         private Label lblSignUpEmailAddress;
         private Label lblSignUpValora;
         private Label lblCreateYourAccount;
-        private TextBox txtFullName;
-        private Label lblFullName;
         private Label lblMessageSignUp;
+        private CheckBox chkTermsAndConditions;
+        private TextBox txtContactNo;
+        private Label lblContactNo;
+        private TextBox txtFirstName;
+        private Label lblFirstName;
+        private TextBox txtLastName;
+        private Label lblLastName;
     }
 }
