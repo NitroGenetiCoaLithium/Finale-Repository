@@ -77,6 +77,7 @@ namespace Object_Oriented_Programming
           private void txtEmailAddress_TextChanged(object sender, EventArgs e)
          {
                  string email = txtEmailAddress.Text;
+                    lblEmailAddress.Text = email;
          }
     }
 }
