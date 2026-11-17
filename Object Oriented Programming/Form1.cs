@@ -71,7 +71,10 @@ namespace Object_Oriented_Programming
         {
             Form2 signUpForm = new Form2();
             signUpForm.Show();
-
+         private void txtEmailAddress_TextChanged(object sender, EventArgs e)
+         {
+                 string email = txtEmailAddress.Text;
+         }
             this.Hide();
         }
     }
