@@ -69,5 +69,26 @@ namespace Object_Oriented_Programming.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_illustration_of_a_simple_magnifying_glass_icon_research_tool_magnifying_vector_png_image_12700281 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-illustration-of-a-simple-magnifying-glass-icon-research-tool-magnifying-v" +
+                        "ector-png-image_12700281", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Valora_logo_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Valora_logo-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
