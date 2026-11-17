@@ -82,16 +82,7 @@ namespace Object_Oriented_Programming
         }
 
 
-        private void txtLastName_TextChanged(object sender, EventArgs e)
-        {
-            string lastName = txtLastName.Text;
-
-        }
-        private void txtFirstName_TextChanged(object sender, EventArgs e)
-        {
-            string firstName = txtFirstName.Text;
-
-        }
+       
 
         private void txtContactNo_TextChanged(object sender, EventArgs e)
         {

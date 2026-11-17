@@ -104,6 +104,7 @@
             btnLogIn.TabIndex = 8;
             btnLogIn.Text = "Log In";
             btnLogIn.UseVisualStyleBackColor = false;
+            btnLogIn.Click += btnLogIn_Click;
             // 
             // chkRememberMe
             // 
