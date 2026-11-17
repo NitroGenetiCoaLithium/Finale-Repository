@@ -74,9 +74,14 @@ namespace Object_Oriented_Programming
        
             this.Hide();
         }
-           private void txtEmailAddress_TextChanged(object sender, EventArgs e)
-   {
-       string email = txtEmailAddress.Text;
-   }
+          private void txtEmailAddress_TextChanged(object sender, EventArgs e)
+  {
+      string email = txtEmailAddress.Text;
+  }
+
+  private void txtLogInPassword_TextChanged(object sender, EventArgs e)
+  {
+      string loginPassword = txtLogInPassword.Text;
+  }
     }
 }
