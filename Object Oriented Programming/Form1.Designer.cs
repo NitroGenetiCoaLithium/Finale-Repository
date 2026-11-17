@@ -82,6 +82,7 @@
             btnSignUpInLogIn.TabIndex = 10;
             btnSignUpInLogIn.Text = "Sign Up";
             btnSignUpInLogIn.UseVisualStyleBackColor = true;
+            btnSignUpInLogIn.Click += btnSignUpInLogIn_Click;
             // 
             // lblDontHaveAnAccount
             // 

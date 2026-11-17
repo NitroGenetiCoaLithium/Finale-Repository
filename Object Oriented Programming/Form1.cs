@@ -66,5 +66,13 @@ namespace Object_Oriented_Programming
 
             path.Dispose();
         }
+
+        private void btnSignUpInLogIn_Click(object sender, EventArgs e)
+        {
+            Form2 signUpForm = new Form2();
+            signUpForm.Show();
+
+            this.Hide();
+        }
     }
 }
