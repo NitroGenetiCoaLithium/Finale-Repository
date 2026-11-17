@@ -75,10 +75,5 @@ namespace Object_Oriented_Programming
 
             this.Hide();
         }
-
-        private void btnSignUp_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
