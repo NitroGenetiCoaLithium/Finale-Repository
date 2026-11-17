@@ -30,6 +30,7 @@
         {
             pctSignUp = new PictureBox();
             pnlSignUp = new Panel();
+            chkTermsAndConditions = new CheckBox();
             txtContactNo = new TextBox();
             lblContactNo = new Label();
             txtFirstName = new TextBox();
@@ -38,14 +39,14 @@
             lblCreateYourAccount = new Label();
             lblLastName = new Label();
             btnLogIninSignUp = new Button();
-            lblAlreadyHaveAnAccount = new Label();
             btnSignUp = new Button();
             txtSignUpPassword = new TextBox();
             lblSignUpPassword = new Label();
             txtSignUpEmailAddress = new TextBox();
             lblSignUpEmailAddress = new Label();
             lblSignUpValora = new Label();
-            chkTermsAndConditions = new CheckBox();
+            lblAlreadyHaveAnAccount = new Label();
+            txtLastName = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pctSignUp).BeginInit();
             pnlSignUp.SuspendLayout();
             SuspendLayout();
@@ -63,6 +64,7 @@
             // pnlSignUp
             // 
             pnlSignUp.BackColor = Color.White;
+            pnlSignUp.Controls.Add(txtLastName);
             pnlSignUp.Controls.Add(chkTermsAndConditions);
             pnlSignUp.Controls.Add(txtContactNo);
             pnlSignUp.Controls.Add(lblContactNo);
@@ -82,6 +84,16 @@
             pnlSignUp.Name = "pnlSignUp";
             pnlSignUp.Size = new Size(341, 569);
             pnlSignUp.TabIndex = 2;
+            // 
+            // chkTermsAndConditions
+            // 
+            chkTermsAndConditions.AutoSize = true;
+            chkTermsAndConditions.Location = new Point(30, 436);
+            chkTermsAndConditions.Name = "chkTermsAndConditions";
+            chkTermsAndConditions.Size = new Size(193, 19);
+            chkTermsAndConditions.TabIndex = 21;
+            chkTermsAndConditions.Text = "Agree to Terms and Conditions.";
+            chkTermsAndConditions.UseVisualStyleBackColor = true;
             // 
             // txtContactNo
             // 
@@ -209,15 +221,19 @@
             lblSignUpValora.TabIndex = 0;
             lblSignUpValora.Text = "Valora";
             // 
-            // chkTermsAndConditions
+            // lblAlreadyHaveAnAccount
             // 
-            chkTermsAndConditions.AutoSize = true;
-            chkTermsAndConditions.Location = new Point(30, 436);
-            chkTermsAndConditions.Name = "chkTermsAndConditions";
-            chkTermsAndConditions.Size = new Size(193, 19);
-            chkTermsAndConditions.TabIndex = 21;
-            chkTermsAndConditions.Text = "Agree to Terms and Conditions.";
-            chkTermsAndConditions.UseVisualStyleBackColor = true;
+            lblAlreadyHaveAnAccount.Location = new Point(0, 0);
+            lblAlreadyHaveAnAccount.Name = "lblAlreadyHaveAnAccount";
+            lblAlreadyHaveAnAccount.Size = new Size(100, 23);
+            lblAlreadyHaveAnAccount.TabIndex = 0;
+            // 
+            // txtLastName
+            // 
+            txtLastName.Location = new Point(30, 181);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(278, 23);
+            txtLastName.TabIndex = 22;
             // 
             // Form2
             // 
@@ -255,5 +271,6 @@
         private TextBox txtFirstName;
         private Label lblFirstName;
         private CheckBox chkTermsAndConditions;
+        private TextBox txtLastName;
     }
 }
