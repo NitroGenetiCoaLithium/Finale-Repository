@@ -1,0 +1,221 @@
+﻿namespace Object_Oriented_Programming
+{
+    partial class Form2
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            pctSignUp = new PictureBox();
+            pnlSignUp = new Panel();
+            lblMessageSignUp = new Label();
+            lblCreateYourAccount = new Label();
+            txtFullName = new TextBox();
+            lblFullName = new Label();
+            btnLogIninSignUp = new Button();
+            lblAlreadyHaveAnAccount = new Label();
+            btnSignUp = new Button();
+            txtSignUpPassword = new TextBox();
+            lblSignUpPassword = new Label();
+            txtSignUpEmailAddress = new TextBox();
+            lblSignUpEmailAddress = new Label();
+            lblSignUpValora = new Label();
+            ((System.ComponentModel.ISupportInitialize)pctSignUp).BeginInit();
+            pnlSignUp.SuspendLayout();
+            SuspendLayout();
+            // 
+            // pctSignUp
+            // 
+            pctSignUp.Image = Properties.Resources._5e6a7038_1ced_49a1_889f_c579b889d961_removebg_preview;
+            pctSignUp.Location = new Point(55, 32);
+            pctSignUp.Name = "pctSignUp";
+            pctSignUp.Size = new Size(478, 643);
+            pctSignUp.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctSignUp.TabIndex = 1;
+            pctSignUp.TabStop = false;
+            // 
+            // pnlSignUp
+            // 
+            pnlSignUp.BackColor = Color.White;
+            pnlSignUp.Controls.Add(lblMessageSignUp);
+            pnlSignUp.Controls.Add(lblCreateYourAccount);
+            pnlSignUp.Controls.Add(txtFullName);
+            pnlSignUp.Controls.Add(lblFullName);
+            pnlSignUp.Controls.Add(btnLogIninSignUp);
+            pnlSignUp.Controls.Add(lblAlreadyHaveAnAccount);
+            pnlSignUp.Controls.Add(btnSignUp);
+            pnlSignUp.Controls.Add(txtSignUpPassword);
+            pnlSignUp.Controls.Add(lblSignUpPassword);
+            pnlSignUp.Controls.Add(txtSignUpEmailAddress);
+            pnlSignUp.Controls.Add(lblSignUpEmailAddress);
+            pnlSignUp.Controls.Add(lblSignUpValora);
+            pnlSignUp.Location = new Point(660, 85);
+            pnlSignUp.Name = "pnlSignUp";
+            pnlSignUp.Size = new Size(341, 457);
+            pnlSignUp.TabIndex = 2;
+            // 
+            // lblMessageSignUp
+            // 
+            lblMessageSignUp.AutoSize = true;
+            lblMessageSignUp.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMessageSignUp.Location = new Point(43, 128);
+            lblMessageSignUp.Name = "lblMessageSignUp";
+            lblMessageSignUp.Size = new Size(256, 17);
+            lblMessageSignUp.TabIndex = 16;
+            lblMessageSignUp.Text = "Join us and find your next home with ease.";
+            // 
+            // lblCreateYourAccount
+            // 
+            lblCreateYourAccount.AutoSize = true;
+            lblCreateYourAccount.Font = new Font("Georgia", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCreateYourAccount.Location = new Point(30, 94);
+            lblCreateYourAccount.Name = "lblCreateYourAccount";
+            lblCreateYourAccount.Size = new Size(281, 34);
+            lblCreateYourAccount.TabIndex = 15;
+            lblCreateYourAccount.Text = "Create Your Account";
+            // 
+            // txtFullName
+            // 
+            txtFullName.Location = new Point(30, 181);
+            txtFullName.Name = "txtFullName";
+            txtFullName.Size = new Size(278, 23);
+            txtFullName.TabIndex = 14;
+            // 
+            // lblFullName
+            // 
+            lblFullName.AutoSize = true;
+            lblFullName.Location = new Point(30, 163);
+            lblFullName.Name = "lblFullName";
+            lblFullName.Size = new Size(61, 15);
+            lblFullName.TabIndex = 13;
+            lblFullName.Text = "Full Name";
+            // 
+            // btnLogIninSignUp
+            // 
+            btnLogIninSignUp.Location = new Point(174, 407);
+            btnLogIninSignUp.Name = "btnLogIninSignUp";
+            btnLogIninSignUp.Size = new Size(75, 23);
+            btnLogIninSignUp.TabIndex = 10;
+            btnLogIninSignUp.Text = "Log In";
+            btnLogIninSignUp.UseVisualStyleBackColor = true;
+            btnLogIninSignUp.Click += btnLogIninSignUp_Click;
+            // 
+            // lblAlreadyHaveAnAccount
+            // 
+            lblAlreadyHaveAnAccount.AutoSize = true;
+            lblAlreadyHaveAnAccount.Location = new Point(30, 411);
+            lblAlreadyHaveAnAccount.Name = "lblAlreadyHaveAnAccount";
+            lblAlreadyHaveAnAccount.Size = new Size(142, 15);
+            lblAlreadyHaveAnAccount.TabIndex = 9;
+            lblAlreadyHaveAnAccount.Text = "Already have an account?";
+            // 
+            // btnSignUp
+            // 
+            btnSignUp.BackColor = Color.DarkGreen;
+            btnSignUp.FlatStyle = FlatStyle.Popup;
+            btnSignUp.ForeColor = Color.White;
+            btnSignUp.Location = new Point(30, 342);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.Size = new Size(278, 33);
+            btnSignUp.TabIndex = 8;
+            btnSignUp.Text = "Sign Up";
+            btnSignUp.UseVisualStyleBackColor = false;
+            // 
+            // txtSignUpPassword
+            // 
+            txtSignUpPassword.Location = new Point(30, 294);
+            txtSignUpPassword.Name = "txtSignUpPassword";
+            txtSignUpPassword.Size = new Size(278, 23);
+            txtSignUpPassword.TabIndex = 6;
+            // 
+            // lblSignUpPassword
+            // 
+            lblSignUpPassword.AutoSize = true;
+            lblSignUpPassword.Location = new Point(30, 276);
+            lblSignUpPassword.Name = "lblSignUpPassword";
+            lblSignUpPassword.Size = new Size(57, 15);
+            lblSignUpPassword.TabIndex = 5;
+            lblSignUpPassword.Text = "Password";
+            // 
+            // txtSignUpEmailAddress
+            // 
+            txtSignUpEmailAddress.Location = new Point(30, 235);
+            txtSignUpEmailAddress.Name = "txtSignUpEmailAddress";
+            txtSignUpEmailAddress.Size = new Size(278, 23);
+            txtSignUpEmailAddress.TabIndex = 4;
+            // 
+            // lblSignUpEmailAddress
+            // 
+            lblSignUpEmailAddress.AutoSize = true;
+            lblSignUpEmailAddress.Location = new Point(30, 217);
+            lblSignUpEmailAddress.Name = "lblSignUpEmailAddress";
+            lblSignUpEmailAddress.Size = new Size(81, 15);
+            lblSignUpEmailAddress.TabIndex = 3;
+            lblSignUpEmailAddress.Text = "Email Address";
+            // 
+            // lblSignUpValora
+            // 
+            lblSignUpValora.AutoSize = true;
+            lblSignUpValora.Font = new Font("Georgia", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSignUpValora.Location = new Point(136, 50);
+            lblSignUpValora.Name = "lblSignUpValora";
+            lblSignUpValora.Size = new Size(74, 25);
+            lblSignUpValora.TabIndex = 0;
+            lblSignUpValora.Text = "Valora";
+            // 
+            // Form2
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkGreen;
+            ClientSize = new Size(1111, 637);
+            Controls.Add(pnlSignUp);
+            Controls.Add(pctSignUp);
+            Name = "Form2";
+            Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)pctSignUp).EndInit();
+            pnlSignUp.ResumeLayout(false);
+            pnlSignUp.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private PictureBox pctSignUp;
+        private Panel pnlSignUp;
+        private Button btnLogIninSignUp;
+        private Label lblAlreadyHaveAnAccount;
+        private Button btnSignUp;
+        private TextBox txtSignUpPassword;
+        private Label lblSignUpPassword;
+        private TextBox txtSignUpEmailAddress;
+        private Label lblSignUpEmailAddress;
+        private Label lblSignUpValora;
+        private Label lblCreateYourAccount;
+        private TextBox txtFullName;
+        private Label lblFullName;
+        private Label lblMessageSignUp;
+    }
+}
