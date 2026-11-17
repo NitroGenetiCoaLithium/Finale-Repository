@@ -33,10 +33,10 @@
             chkTermsAndConditions = new CheckBox();
             txtContactNo = new TextBox();
             lblContactNo = new Label();
-            txtFirstName = new TextBox();
-            lblFirstName = new Label();
-            txtLastName = new TextBox();
-            lblLastName = new Label();
+            this.txtConfirmPassword = new TextBox();
+            this.lblConfirmPassword = new Label();
+            this.txtUsername = new TextBox();
+            lblUsername = new Label();
             lblMessageSignUp = new Label();
             lblCreateYourAccount = new Label();
             btnLogIninSignUp = new Button();
@@ -67,10 +67,10 @@
             pnlSignUp.Controls.Add(chkTermsAndConditions);
             pnlSignUp.Controls.Add(txtContactNo);
             pnlSignUp.Controls.Add(lblContactNo);
-            pnlSignUp.Controls.Add(txtFirstName);
-            pnlSignUp.Controls.Add(lblFirstName);
-            pnlSignUp.Controls.Add(txtLastName);
-            pnlSignUp.Controls.Add(lblLastName);
+            pnlSignUp.Controls.Add(this.txtConfirmPassword);
+            pnlSignUp.Controls.Add(this.lblConfirmPassword);
+            pnlSignUp.Controls.Add(this.txtUsername);
+            pnlSignUp.Controls.Add(lblUsername);
             pnlSignUp.Controls.Add(lblMessageSignUp);
             pnlSignUp.Controls.Add(lblCreateYourAccount);
             pnlSignUp.Controls.Add(btnLogIninSignUp);
@@ -90,7 +90,7 @@
             // 
             chkTermsAndConditions.AutoSize = true;
             chkTermsAndConditions.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkTermsAndConditions.Location = new Point(30, 437);
+            chkTermsAndConditions.Location = new Point(30, 439);
             chkTermsAndConditions.Name = "chkTermsAndConditions";
             chkTermsAndConditions.Size = new Size(273, 17);
             chkTermsAndConditions.TabIndex = 23;
@@ -99,7 +99,7 @@
             // 
             // txtContactNo
             // 
-            txtContactNo.Location = new Point(30, 298);
+            txtContactNo.Location = new Point(30, 242);
             txtContactNo.Name = "txtContactNo";
             txtContactNo.Size = new Size(278, 23);
             txtContactNo.TabIndex = 22;
@@ -107,43 +107,43 @@
             // lblContactNo
             // 
             lblContactNo.AutoSize = true;
-            lblContactNo.Location = new Point(30, 280);
+            lblContactNo.Location = new Point(30, 224);
             lblContactNo.Name = "lblContactNo";
             lblContactNo.Size = new Size(96, 15);
             lblContactNo.TabIndex = 21;
             lblContactNo.Text = "Contact Number";
             // 
-            // txtFirstName
+            // txtConfirmPass
             // 
-            txtFirstName.Location = new Point(30, 242);
-            txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(278, 23);
-            txtFirstName.TabIndex = 20;
+            this.txtConfirmPassword.Location = new Point(30, 410);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Size = new Size(278, 23);
+            this.txtConfirmPassword.TabIndex = 20;
             // 
-            // lblFirstName
+            // lblConfirmPassword
             // 
-            lblFirstName.AutoSize = true;
-            lblFirstName.Location = new Point(30, 224);
-            lblFirstName.Name = "lblFirstName";
-            lblFirstName.Size = new Size(64, 15);
-            lblFirstName.TabIndex = 19;
-            lblFirstName.Text = "First Name";
+            this.lblConfirmPassword.AutoSize = true;
+            this.lblConfirmPassword.Location = new Point(30, 392);
+            this.lblConfirmPassword.Name = "lblConfirmPassword";
+            this.lblConfirmPassword.Size = new Size(104, 15);
+            this.lblConfirmPassword.TabIndex = 19;
+            this.lblConfirmPassword.Text = "Confirm Password";
             // 
-            // txtLastName
+            // txtUsername
             // 
-            txtLastName.Location = new Point(30, 187);
-            txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(278, 23);
-            txtLastName.TabIndex = 18;
+            this.txtUsername.Location = new Point(30, 187);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new Size(278, 23);
+            this.txtUsername.TabIndex = 18;
             // 
-            // lblLastName
+            // lblUsername
             // 
-            lblLastName.AutoSize = true;
-            lblLastName.Location = new Point(30, 169);
-            lblLastName.Name = "lblLastName";
-            lblLastName.Size = new Size(63, 15);
-            lblLastName.TabIndex = 17;
-            lblLastName.Text = "Last Name";
+            lblUsername.AutoSize = true;
+            lblUsername.Location = new Point(30, 169);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(60, 15);
+            lblUsername.TabIndex = 17;
+            lblUsername.Text = "Username";
             // 
             // lblMessageSignUp
             // 
@@ -199,7 +199,7 @@
             // 
             // txtSignUpPassword
             // 
-            txtSignUpPassword.Location = new Point(30, 408);
+            txtSignUpPassword.Location = new Point(30, 354);
             txtSignUpPassword.Name = "txtSignUpPassword";
             txtSignUpPassword.Size = new Size(278, 23);
             txtSignUpPassword.TabIndex = 6;
@@ -207,7 +207,7 @@
             // lblSignUpPassword
             // 
             lblSignUpPassword.AutoSize = true;
-            lblSignUpPassword.Location = new Point(30, 390);
+            lblSignUpPassword.Location = new Point(30, 336);
             lblSignUpPassword.Name = "lblSignUpPassword";
             lblSignUpPassword.Size = new Size(57, 15);
             lblSignUpPassword.TabIndex = 5;
@@ -215,7 +215,7 @@
             // 
             // txtSignUpEmailAddress
             // 
-            txtSignUpEmailAddress.Location = new Point(30, 352);
+            txtSignUpEmailAddress.Location = new Point(30, 296);
             txtSignUpEmailAddress.Name = "txtSignUpEmailAddress";
             txtSignUpEmailAddress.Size = new Size(278, 23);
             txtSignUpEmailAddress.TabIndex = 4;
@@ -223,7 +223,7 @@
             // lblSignUpEmailAddress
             // 
             lblSignUpEmailAddress.AutoSize = true;
-            lblSignUpEmailAddress.Location = new Point(30, 334);
+            lblSignUpEmailAddress.Location = new Point(30, 278);
             lblSignUpEmailAddress.Name = "lblSignUpEmailAddress";
             lblSignUpEmailAddress.Size = new Size(81, 15);
             lblSignUpEmailAddress.TabIndex = 3;
@@ -272,9 +272,9 @@
         private CheckBox chkTermsAndConditions;
         private TextBox txtContactNo;
         private Label lblContactNo;
-        private TextBox txtFirstName;
-        private Label lblFirstName;
-        private TextBox txtLastName;
-        private Label lblLastName;
+        private TextBox txtConfirmPassword;
+        private Label lblConfirmPassword;
+        private TextBox txtUsername;
+        private Label lblUsername;
     }
 }
