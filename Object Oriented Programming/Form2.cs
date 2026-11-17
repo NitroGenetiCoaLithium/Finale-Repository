@@ -80,5 +80,34 @@ namespace Object_Oriented_Programming
         {
 
         }
+
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+            string lastName = txtLastName.Text;
+
+        }
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+            string firstName = txtFirstName.Text;
+
+        }
+
+        private void txtContactNo_TextChanged(object sender, EventArgs e)
+        {
+            string contactNo = txtContactNo.Text;
+
+        }
+
+        private void txtSignUpEmailAddress_TextChanged(object sender, EventArgs e)
+        {
+            string signUpEmailAddress = txtSignUpEmailAddress.Text;
+
+        }
+
+        private void txtSignUpPassword_TextChanged(object sender, EventArgs e)
+        {
+            string signUpPassword = txtSignUpPassword.Text;
+        }
     }
 }
