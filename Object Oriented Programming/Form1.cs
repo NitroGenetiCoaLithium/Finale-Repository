@@ -71,17 +71,22 @@ namespace Object_Oriented_Programming
         {
             Form2 signUpForm = new Form2();
             signUpForm.Show();
-       
+
             this.Hide();
         }
-          private void txtEmailAddress_TextChanged(object sender, EventArgs e)
-  {
-      string email = txtEmailAddress.Text;
-  }
+        private void txtEmailAddress_TextChanged(object sender, EventArgs e)
+        {
+            string email = txtEmailAddress.Text;
+        }
 
-  private void txtLogInPassword_TextChanged(object sender, EventArgs e)
-  {
-      string loginPassword = txtLogInPassword.Text;
-  }
+        private void txtLogInPassword_TextChanged(object sender, EventArgs e)
+        {
+            string loginPassword = txtLogInPassword.Text;
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
