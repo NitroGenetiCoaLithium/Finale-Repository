@@ -9,7 +9,7 @@ namespace Object_Oriented_Programming
     public partial class Form1 : Form
     {
         // Connection string pointing to your local SQL Server instance and database (db_OOP)
-        private string connectionString = @"Data Source=eyser\sqlexpress;Initial Catalog=db_OOP;Integrated Security=True;Trust Server Certificate=True;";
+        private string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=db_OOP;Integrated Security=True;Trust Server Certificate=True;";
 
         // Track failed login attempts
         private int failedAttempts = 0;
