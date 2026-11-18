@@ -30,6 +30,7 @@
         {
             pctLogIn = new PictureBox();
             pnlLogIn = new Panel();
+            picShowHidePassword = new PictureBox();
             btnSignUpInLogIn = new Button();
             lblDontHaveAnAccount = new Label();
             btnLogIn = new Button();
@@ -43,6 +44,7 @@
             lblValora = new Label();
             ((System.ComponentModel.ISupportInitialize)pctLogIn).BeginInit();
             pnlLogIn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picShowHidePassword).BeginInit();
             SuspendLayout();
             // 
             // pctLogIn
@@ -58,6 +60,7 @@
             // pnlLogIn
             // 
             pnlLogIn.BackColor = Color.White;
+            pnlLogIn.Controls.Add(picShowHidePassword);
             pnlLogIn.Controls.Add(btnSignUpInLogIn);
             pnlLogIn.Controls.Add(lblDontHaveAnAccount);
             pnlLogIn.Controls.Add(btnLogIn);
@@ -73,6 +76,17 @@
             pnlLogIn.Name = "pnlLogIn";
             pnlLogIn.Size = new Size(341, 430);
             pnlLogIn.TabIndex = 1;
+            // 
+            // picShowHidePassword
+            // 
+            picShowHidePassword.Image = Properties.Resources.eye_open;
+            picShowHidePassword.Location = new Point(282, 250);
+            picShowHidePassword.Name = "picShowHidePassword";
+            picShowHidePassword.Size = new Size(24, 19);
+            picShowHidePassword.SizeMode = PictureBoxSizeMode.Zoom;
+            picShowHidePassword.TabIndex = 11;
+            picShowHidePassword.TabStop = false;
+            picShowHidePassword.Click += picShowHidePassword_Click;
             // 
             // btnSignUpInLogIn
             // 
@@ -192,6 +206,7 @@
             ((System.ComponentModel.ISupportInitialize)pctLogIn).EndInit();
             pnlLogIn.ResumeLayout(false);
             pnlLogIn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picShowHidePassword).EndInit();
             ResumeLayout(false);
         }
 
@@ -210,5 +225,6 @@
         private Label lblEmailAddress;
         private Button btnSignUpInLogIn;
         private Label lblDontHaveAnAccount;
+        private PictureBox picShowHidePassword;
     }
 }

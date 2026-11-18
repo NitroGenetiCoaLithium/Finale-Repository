@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using Microsoft.Data.SqlClient;
+using Microsoft.Data.SqlClient; // Modern SQL Client package
 using System.Windows.Forms;
 
 namespace Object_Oriented_Programming
@@ -9,11 +9,14 @@ namespace Object_Oriented_Programming
     public partial class Form1 : Form
     {
         // Connection string pointing to your local SQL Server instance and database (db_OOP)
-        private string connectionString = @"Data Source=eyser\sqlexpress;Initial Catalog=db_OOP;Integrated Security=True; Trust Server Certificate = True";
+        private string connectionString = @"Data Source=eyser\sqlexpress;Initial Catalog=db_OOP;Integrated Security=True;Trust Server Certificate=True;";
 
         // Track failed login attempts
         private int failedAttempts = 0;
         private const int MaxAttempts = 10;
+
+        // Track whether password is currently shown or hidden
+        private bool isPasswordVisible = false;
 
         public Form1()
         {
@@ -24,7 +27,13 @@ namespace Object_Oriented_Programming
             RoundButton(btnLogIn, 10);
 
             // Hide password characters by default as you type
-            txtLogInPassword.PasswordChar = '�';
+            txtLogInPassword.PasswordChar = '•';
+
+            // Set default eye icon state if the picturebox exists
+            if (picShowHidePassword != null)
+            {
+                picShowHidePassword.Image = Properties.Resources.eye_hidden;
+            }
         }
 
         // ROUND PANEL
@@ -84,6 +93,7 @@ namespace Object_Oriented_Programming
 
             this.Hide();
         }
+
         private void txtEmailAddress_TextChanged(object sender, EventArgs e)
         {
             string email = txtEmailAddress.Text;
@@ -92,6 +102,29 @@ namespace Object_Oriented_Programming
         private void txtLogInPassword_TextChanged(object sender, EventArgs e)
         {
             string loginPassword = txtLogInPassword.Text;
+        }
+
+        // 👁️ SHOW / HIDE PASSWORD TOGGLE ICON CLICK EVENT
+        private void picShowHidePassword_Click(object sender, EventArgs e)
+        {
+            isPasswordVisible = !isPasswordVisible;
+
+            if (isPasswordVisible)
+            {
+                // Show password (remove mask)
+                txtLogInPassword.PasswordChar = '\0';
+
+                // Switch to open eye icon
+                picShowHidePassword.Image = Properties.Resources.eye_open;
+            }
+            else
+            {
+                // Hide password (apply bullet mask)
+                txtLogInPassword.PasswordChar = '•';
+
+                // Switch back to closed eye with slash icon
+                picShowHidePassword.Image = Properties.Resources.eye_hidden;
+            }
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -130,7 +163,7 @@ namespace Object_Oriented_Programming
 
                         if (count == 1)
                         {
-                            // Success: Credentials match database records
+                            // Success: Credentials match database records, land on Form3
                             Form3 LandingPageForm = new Form3();
                             LandingPageForm.Show();
                             this.Hide();
@@ -148,7 +181,7 @@ namespace Object_Oriented_Programming
                                 btnLogIn.BackColor = Color.Red;
                                 btnLogIn.ForeColor = Color.White;
 
-                                MessageBox.Show("Maximum 10 failed login attempts reached! Access is locked for this session. Please restart the application.", "Locked Out", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Maximum 10 failed login attempts reached! Access is permanently locked for this session. Please end the task and restart the application.", "Locked Out", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else
                             {
