@@ -582,7 +582,6 @@
         private Label lblMessageSupportteam2;
         private Label lblMessageSupportteam1;
         private Label lblNeedHelp;
-        private PictureBox pictureBox1;
         private PictureBox pctFurnitureHome;
         private Label lblFeatureds;
         private Panel pnlFeatured1;
@@ -590,7 +589,6 @@
         private Panel pnlFeatured4;
         private Panel pnlFeatured3;
         private Label lblGreenProperties;
-        private PictureBox pictureBox2;
         private PictureBox pctfeaturedApartment1;
         private PictureBox pctfeaturedApartment2;
         private PictureBox pctfeaturedApartment3;
