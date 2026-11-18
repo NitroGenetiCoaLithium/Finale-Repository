@@ -32,7 +32,7 @@ namespace Object_Oriented_Programming
             // Set default eye icon state if the picturebox exists
             if (picShowHidePassword != null)
             {
-                picShowHidePassword.Image = Properties.Resources.eye_hidden;
+                picShowHidePassword.Image = Properties.Resources.eye_hidden1;
             }
         }
 
@@ -115,7 +115,7 @@ namespace Object_Oriented_Programming
                 txtLogInPassword.PasswordChar = '\0';
 
                 // Switch to open eye icon
-                picShowHidePassword.Image = Properties.Resources.eye_open;
+                picShowHidePassword.Image = Properties.Resources.eye_open1;
             }
             else
             {
@@ -123,7 +123,7 @@ namespace Object_Oriented_Programming
                 txtLogInPassword.PasswordChar = '•';
 
                 // Switch back to closed eye with slash icon
-                picShowHidePassword.Image = Properties.Resources.eye_hidden;
+                picShowHidePassword.Image = Properties.Resources.eye_hidden1;
             }
         }
 

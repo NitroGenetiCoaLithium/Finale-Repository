@@ -93,9 +93,9 @@ namespace Object_Oriented_Programming.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eye_hidden {
+        internal static System.Drawing.Bitmap eye_hidden1 {
             get {
-                object obj = ResourceManager.GetObject("eye_hidden", resourceCulture);
+                object obj = ResourceManager.GetObject("eye_hidden1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Object_Oriented_Programming.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eye_open {
+        internal static System.Drawing.Bitmap eye_open1 {
             get {
-                object obj = ResourceManager.GetObject("eye_open", resourceCulture);
+                object obj = ResourceManager.GetObject("eye_open1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

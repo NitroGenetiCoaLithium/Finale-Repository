@@ -32,7 +32,7 @@
             pnlSignUp = new Panel();
             picShowPassword2 = new PictureBox();
             picShowPassword1 = new PictureBox();
-            chkTermsAndConditions = new CheckBox();
+            chkTerms = new CheckBox();
             txtContactNo = new TextBox();
             lblContactNo = new Label();
             txtConfirmPassword = new TextBox();
@@ -70,7 +70,7 @@
             pnlSignUp.BackColor = Color.White;
             pnlSignUp.Controls.Add(picShowPassword2);
             pnlSignUp.Controls.Add(picShowPassword1);
-            pnlSignUp.Controls.Add(chkTermsAndConditions);
+            pnlSignUp.Controls.Add(chkTerms);
             pnlSignUp.Controls.Add(txtContactNo);
             pnlSignUp.Controls.Add(lblContactNo);
             pnlSignUp.Controls.Add(txtConfirmPassword);
@@ -94,40 +94,42 @@
             // 
             // picShowPassword2
             // 
-            picShowPassword2.Image = Properties.Resources.eye_open;
-            picShowPassword2.Location = new Point(280, 409);
+            picShowPassword2.BackColor = Color.Transparent;
+            picShowPassword2.Image = Properties.Resources.eye_open1;
+            picShowPassword2.Location = new Point(280, 401);
             picShowPassword2.Name = "picShowPassword2";
             picShowPassword2.Size = new Size(24, 20);
             picShowPassword2.SizeMode = PictureBoxSizeMode.Zoom;
             picShowPassword2.TabIndex = 25;
             picShowPassword2.TabStop = false;
-            picShowPassword2.Click += picShowPassword2_Click;
+            
             // 
             // picShowPassword1
             // 
-            picShowPassword1.Image = Properties.Resources.eye_open;
-            picShowPassword1.Location = new Point(280, 352);
+            picShowPassword1.BackColor = Color.Transparent;
+            picShowPassword1.Image = Properties.Resources.eye_open1;
+            picShowPassword1.Location = new Point(280, 347);
             picShowPassword1.Name = "picShowPassword1";
             picShowPassword1.Size = new Size(24, 20);
             picShowPassword1.SizeMode = PictureBoxSizeMode.Zoom;
             picShowPassword1.TabIndex = 24;
             picShowPassword1.TabStop = false;
-            picShowPassword1.Click += pictureBox1_Click;
+          
             // 
-            // chkTermsAndConditions
+            // chkTerms
             // 
-            chkTermsAndConditions.AutoSize = true;
-            chkTermsAndConditions.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkTermsAndConditions.Location = new Point(30, 439);
-            chkTermsAndConditions.Name = "chkTermsAndConditions";
-            chkTermsAndConditions.Size = new Size(273, 17);
-            chkTermsAndConditions.TabIndex = 23;
-            chkTermsAndConditions.Text = "I agree to the Terms of Service and Privacy Policy.";
-            chkTermsAndConditions.UseVisualStyleBackColor = true;
+            chkTerms.AutoSize = true;
+            chkTerms.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkTerms.Location = new Point(30, 439);
+            chkTerms.Name = "chkTerms";
+            chkTerms.Size = new Size(273, 17);
+            chkTerms.TabIndex = 23;
+            chkTerms.Text = "I agree to the Terms of Service and Privacy Policy.";
+            chkTerms.UseVisualStyleBackColor = true;
             // 
             // txtContactNo
             // 
-            txtContactNo.Location = new Point(30, 235);
+            txtContactNo.Location = new Point(30, 227);
             txtContactNo.Name = "txtContactNo";
             txtContactNo.Size = new Size(278, 23);
             txtContactNo.TabIndex = 22;
@@ -135,7 +137,7 @@
             // lblContactNo
             // 
             lblContactNo.AutoSize = true;
-            lblContactNo.Location = new Point(30, 217);
+            lblContactNo.Location = new Point(30, 209);
             lblContactNo.Name = "lblContactNo";
             lblContactNo.Size = new Size(96, 15);
             lblContactNo.TabIndex = 21;
@@ -143,7 +145,7 @@
             // 
             // txtConfirmPassword
             // 
-            txtConfirmPassword.Location = new Point(30, 408);
+            txtConfirmPassword.Location = new Point(30, 400);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.Size = new Size(278, 23);
             txtConfirmPassword.TabIndex = 20;
@@ -151,7 +153,7 @@
             // lblConfirmPassword
             // 
             lblConfirmPassword.AutoSize = true;
-            lblConfirmPassword.Location = new Point(30, 390);
+            lblConfirmPassword.Location = new Point(30, 382);
             lblConfirmPassword.Name = "lblConfirmPassword";
             lblConfirmPassword.Size = new Size(104, 15);
             lblConfirmPassword.TabIndex = 19;
@@ -159,7 +161,7 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(30, 176);
+            txtUsername.Location = new Point(30, 167);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(278, 23);
             txtUsername.TabIndex = 18;
@@ -167,7 +169,7 @@
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(30, 158);
+            lblUsername.Location = new Point(30, 149);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(60, 15);
             lblUsername.TabIndex = 17;
@@ -201,7 +203,7 @@
             btnLogIninSignUp.TabIndex = 10;
             btnLogIninSignUp.Text = "Log In";
             btnLogIninSignUp.UseVisualStyleBackColor = true;
-            btnLogIninSignUp.Click += btnLogIninSignUp_Click;
+            
             // 
             // lblAlreadyHaveAnAccount
             // 
@@ -211,7 +213,7 @@
             lblAlreadyHaveAnAccount.Size = new Size(142, 15);
             lblAlreadyHaveAnAccount.TabIndex = 9;
             lblAlreadyHaveAnAccount.Text = "Already have an account?";
-            lblAlreadyHaveAnAccount.Click += lblAlreadyHaveAnAccount_Click;
+            
             // 
             // btnSignUp
             // 
@@ -228,7 +230,7 @@
             // 
             // txtSignUpPassword
             // 
-            txtSignUpPassword.Location = new Point(30, 351);
+            txtSignUpPassword.Location = new Point(30, 346);
             txtSignUpPassword.Name = "txtSignUpPassword";
             txtSignUpPassword.Size = new Size(278, 23);
             txtSignUpPassword.TabIndex = 6;
@@ -236,7 +238,7 @@
             // lblSignUpPassword
             // 
             lblSignUpPassword.AutoSize = true;
-            lblSignUpPassword.Location = new Point(30, 333);
+            lblSignUpPassword.Location = new Point(30, 328);
             lblSignUpPassword.Name = "lblSignUpPassword";
             lblSignUpPassword.Size = new Size(57, 15);
             lblSignUpPassword.TabIndex = 5;
@@ -244,7 +246,7 @@
             // 
             // txtSignUpEmailAddress
             // 
-            txtSignUpEmailAddress.Location = new Point(30, 293);
+            txtSignUpEmailAddress.Location = new Point(30, 289);
             txtSignUpEmailAddress.Name = "txtSignUpEmailAddress";
             txtSignUpEmailAddress.Size = new Size(278, 23);
             txtSignUpEmailAddress.TabIndex = 4;
@@ -252,7 +254,7 @@
             // lblSignUpEmailAddress
             // 
             lblSignUpEmailAddress.AutoSize = true;
-            lblSignUpEmailAddress.Location = new Point(30, 275);
+            lblSignUpEmailAddress.Location = new Point(30, 271);
             lblSignUpEmailAddress.Name = "lblSignUpEmailAddress";
             lblSignUpEmailAddress.Size = new Size(81, 15);
             lblSignUpEmailAddress.TabIndex = 3;
@@ -300,7 +302,7 @@
         private Label lblSignUpValora;
         private Label lblCreateYourAccount;
         private Label lblMessageSignUp;
-        private CheckBox chkTermsAndConditions;
+        private CheckBox chkTerms;
         private TextBox txtContactNo;
         private Label lblContactNo;
         private TextBox txtConfirmPassword;

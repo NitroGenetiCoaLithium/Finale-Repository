@@ -16,6 +16,8 @@ namespace Object_Oriented_Programming
         private bool isUsernameAvailable = false;
         private bool isContactValid = false;
         private bool isEmailValid = false;
+        private bool isPasswordValid = false;
+        private bool isPasswordMatch = false;
         private bool isPasswordVisible = false;
 
         // UI feedback controls
@@ -25,6 +27,10 @@ namespace Object_Oriented_Programming
         private Label lblContactBoxIndicator = null!;
         private Label lblEmailStatus = null!;
         private Label lblEmailBoxIndicator = null!;
+        private Label lblPasswordStatus = null!;
+        private Label lblPasswordBoxIndicator = null!;
+        private Label lblConfirmPasswordStatus = null!;
+        private Label lblConfirmPasswordBoxIndicator = null!;
         private Button btnTogglePassword = null!;
 
         public Form2()
@@ -34,14 +40,28 @@ namespace Object_Oriented_Programming
             RoundPanel(pnlSignUp, 20);
             RoundButton(btnSignUp, 10);
 
+            // Initially disable the Sign Up button until all criteria are met
+            btnSignUp.Enabled = false;
+
             // Hook up TextChanged and Resize events for real-time validation as you type
-            this.txtUsername.TextChanged += txtUsername_TextChanged;
+            this.txtUsername.TextChanged += (s, e) => { txtUsername_TextChanged(s, e); ValidateFormState(); };
             this.txtUsername.Resize += txtUsername_Resize;
-            this.txtContactNo.TextChanged += txtContactNo_TextChanged;
+
+            this.txtContactNo.TextChanged += (s, e) => { txtContactNo_TextChanged(s, e); ValidateFormState(); };
             this.txtContactNo.Resize += txtContactNo_Resize;
-            this.txtSignUpEmailAddress.TextChanged += txtSignUpEmailAddress_TextChanged;
+
+            this.txtSignUpEmailAddress.TextChanged += (s, e) => { txtSignUpEmailAddress_TextChanged(s, e); ValidateFormState(); };
             this.txtSignUpEmailAddress.Resize += txtSignUpEmailAddress_Resize;
+
+            this.txtSignUpPassword.TextChanged += (s, e) => { txtSignUpPassword_TextChanged(s, e); ValidatePasswordMatch(); ValidateFormState(); };
             this.txtSignUpPassword.Resize += txtSignUpPassword_Resize;
+
+            this.txtConfirmPassword.TextChanged += (s, e) => { ValidatePasswordMatch(); ValidateFormState(); };
+
+            if (chkTerms != null)
+            {
+                this.chkTerms.CheckedChanged += (s, e) => ValidateFormState();
+            }
 
             SetupStatusComponents();
         }
@@ -126,6 +146,57 @@ namespace Object_Oriented_Programming
             txtSignUpEmailAddress.Controls.Add(lblEmailBoxIndicator);
             PositionEmailBoxIndicator();
 
+            // Password Status Label Below
+            lblPasswordStatus = new Label
+            {
+                AutoSize = true,
+                Location = new Point(txtSignUpPassword.Left, txtSignUpPassword.Bottom + 2),
+                Font = new Font("Segoe UI", 9, FontStyle.Regular)
+            };
+            if (txtSignUpPassword.Parent != null)
+            {
+                txtSignUpPassword.Parent.Controls.Add(lblPasswordStatus);
+                lblPasswordStatus.BringToFront();
+            }
+
+            // Password Indicator Inside
+            lblPasswordBoxIndicator = new Label
+            {
+                AutoSize = false,
+                Size = new Size(20, txtSignUpPassword.Height - 4),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                BackColor = Color.Transparent,
+                Cursor = Cursors.Default
+            };
+            txtSignUpPassword.Controls.Add(lblPasswordBoxIndicator);
+
+            // Confirm Password Status Label Below
+            lblConfirmPasswordStatus = new Label
+            {
+                AutoSize = true,
+                Location = new Point(txtConfirmPassword.Left, txtConfirmPassword.Bottom + 2),
+                Font = new Font("Segoe UI", 9, FontStyle.Regular)
+            };
+            if (txtConfirmPassword.Parent != null)
+            {
+                txtConfirmPassword.Parent.Controls.Add(lblConfirmPasswordStatus);
+                lblConfirmPasswordStatus.BringToFront();
+            }
+
+            // Confirm Password Indicator Inside
+            lblConfirmPasswordBoxIndicator = new Label
+            {
+                AutoSize = false,
+                Size = new Size(20, txtConfirmPassword.Height - 4),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                BackColor = Color.Transparent,
+                Cursor = Cursors.Default
+            };
+            txtConfirmPassword.Controls.Add(lblConfirmPasswordBoxIndicator);
+            PositionConfirmPasswordBoxIndicator();
+
             // Password Toggle Button Inside
             btnTogglePassword = new Button
             {
@@ -141,6 +212,7 @@ namespace Object_Oriented_Programming
             btnTogglePassword.Click += btnTogglePassword_Click;
             txtSignUpPassword.Controls.Add(btnTogglePassword);
             PositionPasswordToggle();
+            PositionPasswordBoxIndicator();
         }
 
         private void PositionBoxIndicator()
@@ -170,6 +242,24 @@ namespace Object_Oriented_Programming
             }
         }
 
+        private void PositionPasswordBoxIndicator()
+        {
+            if (lblPasswordBoxIndicator != null && txtSignUpPassword != null && btnTogglePassword != null)
+            {
+                lblPasswordBoxIndicator.Location = new Point(txtSignUpPassword.Width - lblPasswordBoxIndicator.Width - btnTogglePassword.Width - 5, 2);
+                lblPasswordBoxIndicator.Height = txtSignUpPassword.Height - 4;
+            }
+        }
+
+        private void PositionConfirmPasswordBoxIndicator()
+        {
+            if (lblConfirmPasswordBoxIndicator != null && txtConfirmPassword != null)
+            {
+                lblConfirmPasswordBoxIndicator.Location = new Point(txtConfirmPassword.Width - lblConfirmPasswordBoxIndicator.Width - 3, 2);
+                lblConfirmPasswordBoxIndicator.Height = txtConfirmPassword.Height - 4;
+            }
+        }
+
         private void PositionPasswordToggle()
         {
             if (btnTogglePassword != null && txtSignUpPassword != null)
@@ -179,10 +269,14 @@ namespace Object_Oriented_Programming
             }
         }
 
-        private void txtUsername_Resize(object sender, EventArgs e) => PositionBoxIndicator();
-        private void txtContactNo_Resize(object sender, EventArgs e) => PositionContactBoxIndicator();
-        private void txtSignUpEmailAddress_Resize(object sender, EventArgs e) => PositionEmailBoxIndicator();
-        private void txtSignUpPassword_Resize(object sender, EventArgs e) => PositionPasswordToggle();
+        private void txtUsername_Resize(object? sender, EventArgs e) => PositionBoxIndicator();
+        private void txtContactNo_Resize(object? sender, EventArgs e) => PositionContactBoxIndicator();
+        private void txtSignUpEmailAddress_Resize(object? sender, EventArgs e) => PositionEmailBoxIndicator();
+        private void txtSignUpPassword_Resize(object? sender, EventArgs e)
+        {
+            PositionPasswordToggle();
+            PositionPasswordBoxIndicator();
+        }
 
         private void RoundPanel(Panel panel, int radius)
         {
@@ -217,16 +311,16 @@ namespace Object_Oriented_Programming
             path.Dispose();
         }
 
-        private void btnLogIninSignUp_Click(object sender, EventArgs e)
+        private void btnLogIninSignUp_Click(object? sender, EventArgs e)
         {
             Form1 logInForm = new Form1();
             logInForm.Show();
             this.Hide();
         }
 
-        private void lblAlreadyHaveAnAccount_Click(object sender, EventArgs e) { }
+        private void lblAlreadyHaveAnAccount_Click(object? sender, EventArgs e) { }
 
-        private void btnTogglePassword_Click(object sender, EventArgs e)
+        private void btnTogglePassword_Click(object? sender, EventArgs e)
         {
             isPasswordVisible = !isPasswordVisible;
 
@@ -244,8 +338,111 @@ namespace Object_Oriented_Programming
             txtSignUpPassword.SelectionStart = txtSignUpPassword.Text.Length;
         }
 
+        // Global validation check to enable/disable the Sign Up button dynamically
+        private void ValidateFormState()
+        {
+            bool areFieldsNotEmpty = !string.IsNullOrWhiteSpace(txtUsername.Text) &&
+                                     !string.IsNullOrWhiteSpace(txtContactNo.Text) &&
+                                     !string.IsNullOrWhiteSpace(txtSignUpEmailAddress.Text) &&
+                                     !string.IsNullOrWhiteSpace(txtSignUpPassword.Text) &&
+                                     !string.IsNullOrWhiteSpace(txtConfirmPassword.Text);
+
+            bool isCheckedTerms = chkTerms != null && chkTerms.Checked;
+
+            btnSignUp.Enabled = areFieldsNotEmpty &&
+                                isUsernameAvailable &&
+                                isContactValid &&
+                                isEmailValid &&
+                                isPasswordValid &&
+                                isPasswordMatch &&
+                                isCheckedTerms;
+        }
+
+        private void txtSignUpPassword_TextChanged(object? sender, EventArgs e)
+        {
+            string password = txtSignUpPassword.Text;
+
+            if (string.IsNullOrEmpty(password))
+            {
+                txtSignUpPassword.BackColor = SystemColors.Window;
+                if (lblPasswordStatus != null) lblPasswordStatus.Text = "";
+                if (lblPasswordBoxIndicator != null) lblPasswordBoxIndicator.Text = "";
+                isPasswordValid = false;
+                return;
+            }
+
+            if (password.Length > 15)
+            {
+                txtSignUpPassword.BackColor = Color.MistyRose;
+                if (lblPasswordStatus != null)
+                {
+                    lblPasswordStatus.ForeColor = Color.Red;
+                    lblPasswordStatus.Text = "Password must be 15 characters or less";
+                }
+                if (lblPasswordBoxIndicator != null)
+                {
+                    lblPasswordBoxIndicator.ForeColor = Color.Red;
+                    lblPasswordBoxIndicator.Text = "✕";
+                }
+                isPasswordValid = false;
+            }
+            else
+            {
+                txtSignUpPassword.BackColor = Color.Honeydew;
+                if (lblPasswordStatus != null) lblPasswordStatus.Text = "";
+                if (lblPasswordBoxIndicator != null)
+                {
+                    lblPasswordBoxIndicator.ForeColor = Color.Green;
+                    lblPasswordBoxIndicator.Text = "✓";
+                }
+                isPasswordValid = true;
+            }
+        }
+
+        private void ValidatePasswordMatch()
+        {
+            string password = txtSignUpPassword.Text;
+            string confirmPassword = txtConfirmPassword.Text;
+
+            if (string.IsNullOrEmpty(confirmPassword))
+            {
+                txtConfirmPassword.BackColor = SystemColors.Window;
+                if (lblConfirmPasswordStatus != null) lblConfirmPasswordStatus.Text = "";
+                if (lblConfirmPasswordBoxIndicator != null) lblConfirmPasswordBoxIndicator.Text = "";
+                isPasswordMatch = false;
+                return;
+            }
+
+            if (password == confirmPassword)
+            {
+                txtConfirmPassword.BackColor = Color.Honeydew;
+                if (lblConfirmPasswordStatus != null) lblConfirmPasswordStatus.Text = "";
+                if (lblConfirmPasswordBoxIndicator != null)
+                {
+                    lblConfirmPasswordBoxIndicator.ForeColor = Color.Green;
+                    lblConfirmPasswordBoxIndicator.Text = "✓";
+                }
+                isPasswordMatch = true;
+            }
+            else
+            {
+                txtConfirmPassword.BackColor = Color.MistyRose;
+                if (lblConfirmPasswordStatus != null)
+                {
+                    lblConfirmPasswordStatus.ForeColor = Color.Red;
+                    lblConfirmPasswordStatus.Text = "Passwords do not match";
+                }
+                if (lblConfirmPasswordBoxIndicator != null)
+                {
+                    lblConfirmPasswordBoxIndicator.ForeColor = Color.Red;
+                    lblConfirmPasswordBoxIndicator.Text = "✕";
+                }
+                isPasswordMatch = false;
+            }
+        }
+
         // Contact Number Validation in real-time as you type
-        private void txtContactNo_TextChanged(object sender, EventArgs e)
+        private void txtContactNo_TextChanged(object? sender, EventArgs e)
         {
             string contactNo = txtContactNo.Text;
 
@@ -364,8 +561,8 @@ namespace Object_Oriented_Programming
             }
         }
 
-        // Email Address Validation (Must end with @gmail.com, no spaces, no duplication)
-        private void txtSignUpEmailAddress_TextChanged(object sender, EventArgs e)
+        // Email Address Validation
+        private void txtSignUpEmailAddress_TextChanged(object? sender, EventArgs e)
         {
             string email = txtSignUpEmailAddress.Text;
 
@@ -440,8 +637,8 @@ namespace Object_Oriented_Programming
             }
         }
 
-        // Username Check in real-time as you type (Max 15 characters, no spaces, database check)
-        private void txtUsername_TextChanged(object sender, EventArgs e)
+        // Username Check in real-time
+        private void txtUsername_TextChanged(object? sender, EventArgs e)
         {
             string username = txtUsername.Text;
 
@@ -536,115 +733,124 @@ namespace Object_Oriented_Programming
             }
         }
 
-        private void txtSignUpPassword_TextChanged(object sender, EventArgs e) { }
-
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private void btnSignUp_Click(object? sender, EventArgs e)
         {
+            if (!btnSignUp.Enabled) return;
+
             string username = txtUsername.Text.Trim();
             string password = txtSignUpPassword.Text.Trim();
             string contactNo = txtContactNo.Text.Trim();
             string email = txtSignUpEmailAddress.Text.Trim();
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(contactNo) || string.IsNullOrEmpty(email))
-            {
-                MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            // Ask confirmation for account creation
+            DialogResult confirmResult = MessageBox.Show(
+                "Are you sure you want to create this account?",
+                "Confirm Account Creation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
-            if (!isUsernameAvailable)
+            if (confirmResult == DialogResult.Yes)
             {
-                txtUsername.BackColor = Color.MistyRose;
-                MessageBox.Show("Please provide a valid, unique username (max 15 characters).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!isContactValid)
-            {
-                txtContactNo.BackColor = Color.MistyRose;
-                MessageBox.Show("Please provide a valid, unique 11-digit contact number starting with 09.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!isEmailValid)
-            {
-                txtSignUpEmailAddress.BackColor = Color.MistyRose;
-                MessageBox.Show("Please provide a valid, unique email address ending with @gmail.com.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open();
-
-                    string insertQuery = "INSERT INTO tbl_logInfo (user_name, pass_word, contact_no, email_address, is_active) VALUES (@username, @password, @contactNo, @email, @isActive)";
-                    using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
+                    try
                     {
-                        insertCmd.Parameters.AddWithValue("@username", username);
-                        insertCmd.Parameters.AddWithValue("@password", password);
-                        insertCmd.Parameters.AddWithValue("@contactNo", contactNo);
-                        insertCmd.Parameters.AddWithValue("@email", email);
-                        insertCmd.Parameters.AddWithValue("@isActive", 1);
+                        conn.Open();
 
-                        insertCmd.ExecuteNonQuery();
+                        string insertQuery = "INSERT INTO tbl_logInfo (user_name, pass_word, contact_no, email_address, is_active) VALUES (@username, @password, @contactNo, @email, @isActive)";
+                        using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
+                        {
+                            insertCmd.Parameters.AddWithValue("@username", username);
+                            insertCmd.Parameters.AddWithValue("@password", password);
+                            insertCmd.Parameters.AddWithValue("@contactNo", contactNo);
+                            insertCmd.Parameters.AddWithValue("@email", email);
+                            insertCmd.Parameters.AddWithValue("@isActive", 1);
+
+                            insertCmd.ExecuteNonQuery();
+                        }
+
+                        // Custom Welcome Message with Explore Valora choice
+                        using (Form welcomeDialog = new Form())
+                        {
+                            welcomeDialog.Text = "Welcome to Valora";
+                            welcomeDialog.Size = new Size(360, 175);
+                            welcomeDialog.StartPosition = FormStartPosition.CenterParent;
+                            welcomeDialog.FormBorderStyle = FormBorderStyle.FixedDialog;
+                            welcomeDialog.MaximizeBox = false;
+                            welcomeDialog.MinimizeBox = false;
+
+                            Label lblWelcome = new Label
+                            {
+                                Text = $"Welcome to Valora, {username}!",
+                                Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                                AutoSize = false,
+                                TextAlign = ContentAlignment.MiddleCenter,
+                                Dock = DockStyle.Top,
+                                Height = 75
+                            };
+
+                            Button btnExplore = new Button
+                            {
+                                Text = "Explore Valora",
+                                Size = new Size(140, 35),
+                                Location = new Point((welcomeDialog.ClientSize.Width - 140) / 2, 85),
+                                DialogResult = DialogResult.OK,
+                                BackColor = Color.DarkGreen,
+                                ForeColor = Color.White,
+                                FlatStyle = FlatStyle.Flat
+                            };
+
+                            welcomeDialog.Controls.Add(lblWelcome);
+                            welcomeDialog.Controls.Add(btnExplore);
+                            welcomeDialog.AcceptButton = btnExplore;
+                            welcomeDialog.ShowDialog(this);
+                        }
+
+                        Form3 LandingPageForm = new Form3();
+                        LandingPageForm.Show();
+                        this.Hide();
                     }
-
-                    MessageBox.Show("Account successfully created and saved to database!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    Form3 LandingPageForm = new Form3();
-                    LandingPageForm.Show();
-                    this.Hide();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void picShowPassword1_Click(object? sender, EventArgs e)
         {
             isPasswordVisible = !isPasswordVisible;
 
             if (isPasswordVisible)
             {
-                // Show password (remove mask)
                 txtSignUpPassword.PasswordChar = '\0';
-
-                // Switch to open eye icon
-                picShowPassword1.Image = Properties.Resources.eye_open;
+                picShowPassword1.Image = Properties.Resources.eye_open1;
             }
             else
             {
-                // Hide password (apply bullet mask)
                 txtSignUpPassword.PasswordChar = '•';
-
-                // Switch back to closed eye with slash icon
-                picShowPassword1.Image = Properties.Resources.eye_hidden;
+                picShowPassword1.Image = Properties.Resources.eye_hidden1;
             }
         }
 
-        private void picShowPassword2_Click(object sender, EventArgs e)
+        private void picShowPassword2_Click(object? sender, EventArgs e)
         {
             isPasswordVisible = !isPasswordVisible;
 
             if (isPasswordVisible)
             {
-                // Show password (remove mask)
                 txtConfirmPassword.PasswordChar = '\0';
-
-                // Switch to open eye icon
-                picShowPassword2.Image = Properties.Resources.eye_open;
+                picShowPassword2.Image = Properties.Resources.eye_open1;
             }
             else
             {
-                // Hide password (apply bullet mask)
                 txtConfirmPassword.PasswordChar = '•';
-
-                // Switch back to closed eye with slash icon
-                picShowPassword2.Image = Properties.Resources.eye_hidden;
+                picShowPassword2.Image = Properties.Resources.eye_hidden1;
             }
         }
+
+      
+        
     }
 }
