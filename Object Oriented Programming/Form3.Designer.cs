@@ -31,18 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             pctDMAvatarIcon = new PictureBox();
             pctNotifIcon = new PictureBox();
-            btnDarmMode = new Button();
             lblLandPageValora = new Label();
-            pctAvatar = new PictureBox();
-            lblLandPgUsername = new Label();
-            btnHome = new Button();
-            pnlLandingPage = new Panel();
             pnlLandPgNeedHelp = new Panel();
             btnContactUs = new Button();
             lblNeedHelp = new Label();
-            lblMessageSupportteam1 = new Label();
             lblMessageSupportteam2 = new Label();
-            btnLogOut = new Button();
+            lblMessageSupportteam1 = new Label();
             btnSettings = new Button();
             btnMessages = new Button();
             btnFav = new Button();
@@ -70,10 +64,18 @@
             lblSpacious2RBUnit = new Label();
             pctfeaturedApartment3 = new PictureBox();
             lblGreenProperties = new Label();
+            btnHome = new Button();
+            pnlPlaceHolderofbarangay = new Panel();
+            pctHouseIcon = new PictureBox();
+            cmbBarangays = new ComboBox();
+            lblBarangays = new Label();
+            panel1 = new Panel();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pctDMAvatarIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctNotifIcon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pctAvatar).BeginInit();
-            pnlLandingPage.SuspendLayout();
             pnlLandPgNeedHelp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pctFurnitureHome).BeginInit();
             pnlFeatured1.SuspendLayout();
@@ -84,12 +86,16 @@
             ((System.ComponentModel.ISupportInitialize)pctfeaturedApartment4).BeginInit();
             pnlFeatured3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pctfeaturedApartment3).BeginInit();
+            pnlPlaceHolderofbarangay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pctHouseIcon).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pctDMAvatarIcon
             // 
             pctDMAvatarIcon.Image = Properties.Resources.DM_avatar_icon;
-            pctDMAvatarIcon.Location = new Point(1052, -1);
+            pctDMAvatarIcon.Location = new Point(1027, 4);
             pctDMAvatarIcon.Name = "pctDMAvatarIcon";
             pctDMAvatarIcon.Size = new Size(60, 60);
             pctDMAvatarIcon.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -99,92 +105,33 @@
             // pctNotifIcon
             // 
             pctNotifIcon.Image = Properties.Resources.DM_Notif_icon;
-            pctNotifIcon.Location = new Point(1019, 12);
+            pctNotifIcon.Location = new Point(996, 18);
             pctNotifIcon.Name = "pctNotifIcon";
             pctNotifIcon.Size = new Size(33, 33);
             pctNotifIcon.SizeMode = PictureBoxSizeMode.StretchImage;
             pctNotifIcon.TabIndex = 5;
             pctNotifIcon.TabStop = false;
             // 
-            // btnDarmMode
-            // 
-            btnDarmMode.BackColor = Color.DarkGreen;
-            btnDarmMode.FlatStyle = FlatStyle.Popup;
-            btnDarmMode.ForeColor = Color.White;
-            btnDarmMode.Location = new Point(926, 18);
-            btnDarmMode.Name = "btnDarmMode";
-            btnDarmMode.Size = new Size(75, 23);
-            btnDarmMode.TabIndex = 6;
-            btnDarmMode.Text = "Dark Mode";
-            btnDarmMode.UseVisualStyleBackColor = false;
-            // 
             // lblLandPageValora
             // 
             lblLandPageValora.AutoSize = true;
-            lblLandPageValora.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLandPageValora.Location = new Point(60, 41);
+            lblLandPageValora.Font = new Font("Georgia", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLandPageValora.Location = new Point(58, 18);
             lblLandPageValora.Name = "lblLandPageValora";
-            lblLandPageValora.Size = new Size(54, 18);
+            lblLandPageValora.Size = new Size(74, 25);
             lblLandPageValora.TabIndex = 0;
             lblLandPageValora.Text = "Valora";
-            // 
-            // pctAvatar
-            // 
-            pctAvatar.Image = Properties.Resources.DM_avatar_icon;
-            pctAvatar.Location = new Point(45, 62);
-            pctAvatar.Name = "pctAvatar";
-            pctAvatar.Size = new Size(89, 84);
-            pctAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
-            pctAvatar.TabIndex = 7;
-            pctAvatar.TabStop = false;
-            // 
-            // lblLandPgUsername
-            // 
-            lblLandPgUsername.AutoSize = true;
-            lblLandPgUsername.Location = new Point(41, 131);
-            lblLandPgUsername.Name = "lblLandPgUsername";
-            lblLandPgUsername.Size = new Size(98, 15);
-            lblLandPgUsername.TabIndex = 8;
-            lblLandPgUsername.Text = "Rene Butterbonia";
-            // 
-            // btnHome
-            // 
-            btnHome.Location = new Point(14, 176);
-            btnHome.Name = "btnHome";
-            btnHome.Size = new Size(152, 35);
-            btnHome.TabIndex = 9;
-            btnHome.Text = "Home";
-            btnHome.TextAlign = ContentAlignment.MiddleLeft;
-            btnHome.UseVisualStyleBackColor = true;
-            // 
-            // pnlLandingPage
-            // 
-            pnlLandingPage.BackColor = Color.White;
-            pnlLandingPage.Controls.Add(pnlLandPgNeedHelp);
-            pnlLandingPage.Controls.Add(btnLogOut);
-            pnlLandingPage.Controls.Add(btnSettings);
-            pnlLandingPage.Controls.Add(btnMessages);
-            pnlLandingPage.Controls.Add(btnFav);
-            pnlLandingPage.Controls.Add(btnBookings);
-            pnlLandingPage.Controls.Add(btnHome);
-            pnlLandingPage.Controls.Add(lblLandPgUsername);
-            pnlLandingPage.Controls.Add(pctAvatar);
-            pnlLandingPage.Controls.Add(lblLandPageValora);
-            pnlLandingPage.Location = new Point(-1, 0);
-            pnlLandingPage.Name = "pnlLandingPage";
-            pnlLandingPage.Size = new Size(183, 707);
-            pnlLandingPage.TabIndex = 3;
             // 
             // pnlLandPgNeedHelp
             // 
             pnlLandPgNeedHelp.BackColor = Color.FromArgb(192, 255, 192);
             pnlLandPgNeedHelp.Controls.Add(btnContactUs);
             pnlLandPgNeedHelp.Controls.Add(lblNeedHelp);
-            pnlLandPgNeedHelp.Controls.Add(lblMessageSupportteam1);
             pnlLandPgNeedHelp.Controls.Add(lblMessageSupportteam2);
-            pnlLandPgNeedHelp.Location = new Point(13, 581);
+            pnlLandPgNeedHelp.Controls.Add(lblMessageSupportteam1);
+            pnlLandPgNeedHelp.Location = new Point(797, 10);
             pnlLandPgNeedHelp.Name = "pnlLandPgNeedHelp";
-            pnlLandPgNeedHelp.Size = new Size(152, 111);
+            pnlLandPgNeedHelp.Size = new Size(216, 59);
             pnlLandPgNeedHelp.TabIndex = 16;
             // 
             // btnContactUs
@@ -192,7 +139,7 @@
             btnContactUs.BackColor = Color.DarkGreen;
             btnContactUs.FlatStyle = FlatStyle.Popup;
             btnContactUs.ForeColor = Color.White;
-            btnContactUs.Location = new Point(18, 68);
+            btnContactUs.Location = new Point(125, 19);
             btnContactUs.Name = "btnContactUs";
             btnContactUs.Size = new Size(75, 23);
             btnContactUs.TabIndex = 3;
@@ -202,90 +149,84 @@
             // lblNeedHelp
             // 
             lblNeedHelp.AutoSize = true;
-            lblNeedHelp.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNeedHelp.Location = new Point(18, 16);
+            lblNeedHelp.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNeedHelp.Location = new Point(13, 8);
             lblNeedHelp.Name = "lblNeedHelp";
-            lblNeedHelp.Size = new Size(66, 15);
+            lblNeedHelp.Size = new Size(78, 15);
             lblNeedHelp.TabIndex = 0;
             lblNeedHelp.Text = "Need help?";
-            // 
-            // lblMessageSupportteam1
-            // 
-            lblMessageSupportteam1.AutoSize = true;
-            lblMessageSupportteam1.Font = new Font("Segoe UI", 8.25F);
-            lblMessageSupportteam1.Location = new Point(18, 31);
-            lblMessageSupportteam1.Name = "lblMessageSupportteam1";
-            lblMessageSupportteam1.Size = new Size(99, 13);
-            lblMessageSupportteam1.TabIndex = 1;
-            lblMessageSupportteam1.Text = "Our support team";
             // 
             // lblMessageSupportteam2
             // 
             lblMessageSupportteam2.AutoSize = true;
             lblMessageSupportteam2.Font = new Font("Segoe UI", 8.25F);
-            lblMessageSupportteam2.Location = new Point(19, 46);
+            lblMessageSupportteam2.Location = new Point(14, 38);
             lblMessageSupportteam2.Name = "lblMessageSupportteam2";
             lblMessageSupportteam2.Size = new Size(84, 13);
             lblMessageSupportteam2.TabIndex = 2;
             lblMessageSupportteam2.Text = "is here for you.";
             // 
-            // btnLogOut
+            // lblMessageSupportteam1
             // 
-            btnLogOut.Location = new Point(14, 381);
-            btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(152, 35);
-            btnLogOut.TabIndex = 15;
-            btnLogOut.Text = "Log Out";
-            btnLogOut.TextAlign = ContentAlignment.MiddleLeft;
-            btnLogOut.UseVisualStyleBackColor = true;
-            btnLogOut.Click += btnLogOut_Click;
+            lblMessageSupportteam1.AutoSize = true;
+            lblMessageSupportteam1.Font = new Font("Segoe UI", 8.25F);
+            lblMessageSupportteam1.Location = new Point(13, 23);
+            lblMessageSupportteam1.Name = "lblMessageSupportteam1";
+            lblMessageSupportteam1.Size = new Size(99, 13);
+            lblMessageSupportteam1.TabIndex = 1;
+            lblMessageSupportteam1.Text = "Our support team";
             // 
             // btnSettings
             // 
-            btnSettings.Location = new Point(14, 340);
+            btnSettings.FlatStyle = FlatStyle.Popup;
+            btnSettings.Location = new Point(638, 23);
             btnSettings.Name = "btnSettings";
-            btnSettings.Size = new Size(152, 35);
+            btnSettings.Size = new Size(87, 23);
             btnSettings.TabIndex = 14;
             btnSettings.Text = "Settings";
-            btnSettings.TextAlign = ContentAlignment.MiddleLeft;
             btnSettings.UseVisualStyleBackColor = true;
             // 
             // btnMessages
             // 
-            btnMessages.Location = new Point(14, 299);
+            btnMessages.BackColor = Color.DarkGreen;
+            btnMessages.FlatStyle = FlatStyle.Popup;
+            btnMessages.ForeColor = Color.White;
+            btnMessages.Location = new Point(317, 22);
             btnMessages.Name = "btnMessages";
-            btnMessages.Size = new Size(152, 35);
+            btnMessages.Size = new Size(176, 36);
             btnMessages.TabIndex = 13;
             btnMessages.Text = "Messages";
-            btnMessages.TextAlign = ContentAlignment.MiddleLeft;
-            btnMessages.UseVisualStyleBackColor = true;
+            btnMessages.UseVisualStyleBackColor = false;
             // 
             // btnFav
             // 
-            btnFav.Location = new Point(14, 258);
+            btnFav.FlatStyle = FlatStyle.Popup;
+            btnFav.Location = new Point(493, 23);
             btnFav.Name = "btnFav";
-            btnFav.Size = new Size(152, 35);
+            btnFav.Size = new Size(87, 23);
             btnFav.TabIndex = 12;
             btnFav.Text = "Favorites";
-            btnFav.TextAlign = ContentAlignment.MiddleLeft;
             btnFav.UseVisualStyleBackColor = true;
             // 
             // btnBookings
             // 
-            btnBookings.Location = new Point(14, 217);
+            btnBookings.BackColor = Color.DarkGreen;
+            btnBookings.FlatStyle = FlatStyle.Popup;
+            btnBookings.ForeColor = Color.White;
+            btnBookings.Location = new Point(558, 22);
             btnBookings.Name = "btnBookings";
-            btnBookings.Size = new Size(152, 35);
+            btnBookings.Size = new Size(176, 36);
             btnBookings.TabIndex = 11;
             btnBookings.Text = "My Bookings";
-            btnBookings.TextAlign = ContentAlignment.MiddleLeft;
-            btnBookings.UseVisualStyleBackColor = true;
+            btnBookings.UseVisualStyleBackColor = false;
+            btnBookings.Click += btnBookings_Click;
             // 
             // pctFurnitureHome
             // 
             pctFurnitureHome.Image = (Image)resources.GetObject("pctFurnitureHome.Image");
-            pctFurnitureHome.Location = new Point(195, 52);
+            pctFurnitureHome.Location = new Point(29, 74);
             pctFurnitureHome.Name = "pctFurnitureHome";
-            pctFurnitureHome.Size = new Size(902, 323);
+            pctFurnitureHome.Size = new Size(1038, 380);
             pctFurnitureHome.SizeMode = PictureBoxSizeMode.StretchImage;
             pctFurnitureHome.TabIndex = 7;
             pctFurnitureHome.TabStop = false;
@@ -293,10 +234,10 @@
             // lblFeatureds
             // 
             lblFeatureds.AutoSize = true;
-            lblFeatureds.Font = new Font("Georgia", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFeatureds.Location = new Point(195, 387);
+            lblFeatureds.Font = new Font("Georgia", 24F);
+            lblFeatureds.Location = new Point(29, 564);
             lblFeatureds.Name = "lblFeatureds";
-            lblFeatureds.Size = new Size(226, 29);
+            lblFeatureds.Size = new Size(296, 38);
             lblFeatureds.TabIndex = 8;
             lblFeatureds.Text = "Featured Properties";
             // 
@@ -307,7 +248,7 @@
             pnlFeatured1.Controls.Add(lblGalasStBignay);
             pnlFeatured1.Controls.Add(lblSimpleApartment);
             pnlFeatured1.Controls.Add(pctfeaturedApartment1);
-            pnlFeatured1.Location = new Point(214, 419);
+            pnlFeatured1.Location = new Point(40, 616);
             pnlFeatured1.Name = "pnlFeatured1";
             pnlFeatured1.Size = new Size(200, 235);
             pnlFeatured1.TabIndex = 9;
@@ -359,7 +300,7 @@
             pnlFeatured2.Controls.Add(lblLaMesaStUgong);
             pnlFeatured2.Controls.Add(lblCozyApartmentUnit);
             pnlFeatured2.Controls.Add(pctfeaturedApartment2);
-            pnlFeatured2.Location = new Point(434, 419);
+            pnlFeatured2.Location = new Point(253, 616);
             pnlFeatured2.Name = "pnlFeatured2";
             pnlFeatured2.Size = new Size(200, 235);
             pnlFeatured2.TabIndex = 10;
@@ -411,7 +352,7 @@
             pnlFeatured4.Controls.Add(lblGumamelaStMarulas);
             pnlFeatured4.Controls.Add(lblModernApartment);
             pnlFeatured4.Controls.Add(pctfeaturedApartment4);
-            pnlFeatured4.Location = new Point(872, 419);
+            pnlFeatured4.Location = new Point(679, 616);
             pnlFeatured4.Name = "pnlFeatured4";
             pnlFeatured4.Size = new Size(200, 235);
             pnlFeatured4.TabIndex = 12;
@@ -463,7 +404,7 @@
             pnlFeatured3.Controls.Add(lblBalangkasBukidSubd);
             pnlFeatured3.Controls.Add(lblSpacious2RBUnit);
             pnlFeatured3.Controls.Add(pctfeaturedApartment3);
-            pnlFeatured3.Location = new Point(652, 419);
+            pnlFeatured3.Location = new Point(466, 616);
             pnlFeatured3.Name = "pnlFeatured3";
             pnlFeatured3.Size = new Size(200, 235);
             pnlFeatured3.TabIndex = 11;
@@ -511,39 +452,148 @@
             // lblGreenProperties
             // 
             lblGreenProperties.AutoSize = true;
-            lblGreenProperties.Font = new Font("Georgia", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGreenProperties.Font = new Font("Georgia", 24F);
             lblGreenProperties.ForeColor = Color.DarkGreen;
-            lblGreenProperties.Location = new Point(297, 387);
+            lblGreenProperties.Location = new Point(162, 564);
             lblGreenProperties.Name = "lblGreenProperties";
-            lblGreenProperties.Size = new Size(124, 29);
+            lblGreenProperties.Size = new Size(162, 38);
             lblGreenProperties.TabIndex = 13;
             lblGreenProperties.Text = "Properties";
+            lblGreenProperties.Click += lblGreenProperties_Click;
+            // 
+            // btnHome
+            // 
+            btnHome.FlatStyle = FlatStyle.Popup;
+            btnHome.Location = new Point(346, 23);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(87, 23);
+            btnHome.TabIndex = 17;
+            btnHome.Text = "Home";
+            btnHome.UseVisualStyleBackColor = true;
+            // 
+            // pnlPlaceHolderofbarangay
+            // 
+            pnlPlaceHolderofbarangay.BackColor = Color.FromArgb(224, 224, 224);
+            pnlPlaceHolderofbarangay.Controls.Add(pctHouseIcon);
+            pnlPlaceHolderofbarangay.Controls.Add(cmbBarangays);
+            pnlPlaceHolderofbarangay.Controls.Add(lblBarangays);
+            pnlPlaceHolderofbarangay.Controls.Add(pnlLandPgNeedHelp);
+            pnlPlaceHolderofbarangay.Controls.Add(btnMessages);
+            pnlPlaceHolderofbarangay.Controls.Add(btnBookings);
+            pnlPlaceHolderofbarangay.Location = new Point(29, 466);
+            pnlPlaceHolderofbarangay.Name = "pnlPlaceHolderofbarangay";
+            pnlPlaceHolderofbarangay.Size = new Size(1038, 78);
+            pnlPlaceHolderofbarangay.TabIndex = 18;
+            // 
+            // pctHouseIcon
+            // 
+            pctHouseIcon.BackColor = Color.Transparent;
+            pctHouseIcon.Image = (Image)resources.GetObject("pctHouseIcon.Image");
+            pctHouseIcon.Location = new Point(18, 16);
+            pctHouseIcon.Name = "pctHouseIcon";
+            pctHouseIcon.Size = new Size(43, 46);
+            pctHouseIcon.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctHouseIcon.TabIndex = 19;
+            pctHouseIcon.TabStop = false;
+            // 
+            // cmbBarangays
+            // 
+            cmbBarangays.FormattingEnabled = true;
+            cmbBarangays.Items.AddRange(new object[] { "Arkong Bato", "Bagbaguin", "Balangkas", "Bignay", "Bisig", "Canumay East", "Canumay West", "Coloong", "Dalandanan", "Gen. T. de Leon", "Isla", "Karuhatan", "Lawang Bato", "Lingunan", "Mabolo", "Malanday", "Malinta", "Mapulang Lupa", "Marulas", "Maysan", "Palasan", "Parada", "Pariancillo Villa", "Paso de Blas", "Pasolo", "Poblacion", "Pulo", "Punturin", "Rincon", "Tagalag", "Ugong", "Veinte Reales", "Wawang Pulo" });
+            cmbBarangays.Location = new Point(70, 38);
+            cmbBarangays.Name = "cmbBarangays";
+            cmbBarangays.Size = new Size(181, 23);
+            cmbBarangays.TabIndex = 18;
+            // 
+            // lblBarangays
+            // 
+            lblBarangays.AutoSize = true;
+            lblBarangays.Font = new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBarangays.Location = new Point(70, 16);
+            lblBarangays.Name = "lblBarangays";
+            lblBarangays.Size = new Size(92, 18);
+            lblBarangays.TabIndex = 17;
+            lblBarangays.Text = "Barangay's";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(893, 616);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(200, 235);
+            panel1.TabIndex = 13;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label1.Location = new Point(9, 201);
+            label1.Name = "label1";
+            label1.Size = new Size(122, 20);
+            label1.TabIndex = 6;
+            label1.Text = "₱11,500/month";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 8.25F);
+            label2.Location = new Point(16, 179);
+            label2.Name = "label2";
+            label2.Size = new Size(121, 13);
+            label2.TabIndex = 5;
+            label2.Text = "Gumamela St. Marulas";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label3.Location = new Point(3, 157);
+            label3.Name = "label3";
+            label3.Size = new Size(156, 21);
+            label3.TabIndex = 4;
+            label3.Text = "Modern Apartment";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(194, 151);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            ClientSize = new Size(1111, 704);
+            AutoScroll = true;
+            BackColor = Color.White;
+            ClientSize = new Size(1111, 637);
+            Controls.Add(panel1);
+            Controls.Add(btnHome);
             Controls.Add(lblGreenProperties);
             Controls.Add(pnlFeatured4);
+            Controls.Add(btnSettings);
             Controls.Add(pnlFeatured3);
             Controls.Add(pnlFeatured2);
+            Controls.Add(btnFav);
             Controls.Add(pnlFeatured1);
             Controls.Add(lblFeatureds);
             Controls.Add(pctFurnitureHome);
-            Controls.Add(btnDarmMode);
             Controls.Add(pctNotifIcon);
+            Controls.Add(lblLandPageValora);
             Controls.Add(pctDMAvatarIcon);
-            Controls.Add(pnlLandingPage);
+            Controls.Add(pnlPlaceHolderofbarangay);
             Name = "Form3";
             Text = "Form3";
             Load += Form3_Load;
             ((System.ComponentModel.ISupportInitialize)pctDMAvatarIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)pctNotifIcon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pctAvatar).EndInit();
-            pnlLandingPage.ResumeLayout(false);
-            pnlLandingPage.PerformLayout();
             pnlLandPgNeedHelp.ResumeLayout(false);
             pnlLandPgNeedHelp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pctFurnitureHome).EndInit();
@@ -559,6 +609,12 @@
             pnlFeatured3.ResumeLayout(false);
             pnlFeatured3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pctfeaturedApartment3).EndInit();
+            pnlPlaceHolderofbarangay.ResumeLayout(false);
+            pnlPlaceHolderofbarangay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pctHouseIcon).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -566,13 +622,7 @@
         #endregion
         private PictureBox pctDMAvatarIcon;
         private PictureBox pctNotifIcon;
-        private Button btnDarmMode;
         private Label lblLandPageValora;
-        private PictureBox pctAvatar;
-        private Label lblLandPgUsername;
-        private Button btnHome;
-        private Panel pnlLandingPage;
-        private Button btnLogOut;
         private Button btnSettings;
         private Button btnMessages;
         private Button btnFav;
@@ -582,7 +632,6 @@
         private Label lblMessageSupportteam2;
         private Label lblMessageSupportteam1;
         private Label lblNeedHelp;
-        private PictureBox pictureBox1;
         private PictureBox pctFurnitureHome;
         private Label lblFeatureds;
         private Panel pnlFeatured1;
@@ -590,7 +639,6 @@
         private Panel pnlFeatured4;
         private Panel pnlFeatured3;
         private Label lblGreenProperties;
-        private PictureBox pictureBox2;
         private PictureBox pctfeaturedApartment1;
         private PictureBox pctfeaturedApartment2;
         private PictureBox pctfeaturedApartment3;
@@ -607,5 +655,15 @@
         private Label lbl10kpermonth;
         private Label lbl11kpermonth;
         private Label lbl8500permonth;
+        private Button btnHome;
+        private Panel pnlPlaceHolderofbarangay;
+        private Label lblBarangays;
+        private ComboBox cmbBarangays;
+        private PictureBox pctHouseIcon;
+        private Panel panel1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private PictureBox pictureBox1;
     }
 }

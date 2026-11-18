@@ -20,7 +20,10 @@ namespace Object_Oriented_Programming
             RoundPanel2(pnlFeatured2, 20);
             RoundPanel3(pnlFeatured3, 20);
             RoundPanel4(pnlFeatured4, 20);
+            RoundPanelPlaceHolder(pnlPlaceHolderofbarangay, 20);
             RoundButton(btnContactUs, 10);
+            RoundButtonMessages(btnMessages, 10);
+            RoundButtonBookings(btnBookings, 10);
             RoundPictureBox(pctFurnitureHome, 20);
         }
 
@@ -117,8 +120,79 @@ namespace Object_Oriented_Programming
             path.Dispose();
         }
 
+        private void RoundPanelPlaceHolder(Panel panel, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int diameter = radius * 2;
+            path.AddArc(0, 0, diameter, diameter, 180, 90);
+            path.AddArc(panel.Width - diameter, 0,
+                diameter, diameter, 270, 90);
+            path.AddArc(panel.Width - diameter,
+                panel.Height - diameter,
+                diameter, diameter, 0, 90);
+            path.AddArc(0, panel.Height - diameter,
+                diameter, diameter, 90, 90);
+            path.CloseFigure();
+            panel.Region = new Region(path);
+            path.Dispose();
+        }
+
         // ROUND BUTTON
         private void RoundButton(Button button, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+
+            int diameter = radius * 2;
+
+            // Prevent radius from exceeding button height
+            diameter = Math.Min(diameter, button.Height);
+
+            path.AddArc(0, 0, diameter, diameter, 180, 90);
+            path.AddArc(button.Width - diameter, 0,
+                diameter, diameter, 270, 90);
+            path.AddArc(button.Width - diameter,
+                button.Height - diameter,
+                diameter, diameter, 0, 90);
+            path.AddArc(0, button.Height - diameter,
+                diameter, diameter, 90, 90);
+
+            path.CloseFigure();
+
+            button.Region = new Region(path);
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderSize = 0;
+
+            path.Dispose();
+        }
+
+        private void RoundButtonMessages(Button button, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+
+            int diameter = radius * 2;
+
+            // Prevent radius from exceeding button height
+            diameter = Math.Min(diameter, button.Height);
+
+            path.AddArc(0, 0, diameter, diameter, 180, 90);
+            path.AddArc(button.Width - diameter, 0,
+                diameter, diameter, 270, 90);
+            path.AddArc(button.Width - diameter,
+                button.Height - diameter,
+                diameter, diameter, 0, 90);
+            path.AddArc(0, button.Height - diameter,
+                diameter, diameter, 90, 90);
+
+            path.CloseFigure();
+
+            button.Region = new Region(path);
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderSize = 0;
+
+            path.Dispose();
+        }
+
+        private void RoundButtonBookings(Button button, int radius)
         {
             GraphicsPath path = new GraphicsPath();
 
@@ -178,6 +252,16 @@ namespace Object_Oriented_Programming
             LogInForm.Show();
 
             this.Hide();
+        }
+
+        private void btnBookings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblGreenProperties_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
