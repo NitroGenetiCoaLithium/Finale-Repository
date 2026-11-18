@@ -419,19 +419,19 @@ namespace Object_Oriented_Programming
             }
         }
 
-        private void picShowPassword1_Click(object? sender, EventArgs e)
+        private void picShowPassword3_Click(object? sender, EventArgs e)
         {
             isPasswordVisible = !isPasswordVisible;
 
             if (isPasswordVisible)
             {
                 txtSignUpPassword.PasswordChar = '\0';
-                picShowPassword1.Image = Properties.Resources.eye_open1;
+                picShowPassword3.Image = Properties.Resources.eye_open1;
             }
             else
             {
                 txtSignUpPassword.PasswordChar = '•';
-                picShowPassword1.Image = Properties.Resources.eye_hidden1;
+                picShowPassword3.Image = Properties.Resources.eye_hidden1;
             }
         }
 
