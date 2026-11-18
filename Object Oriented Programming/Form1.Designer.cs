@@ -80,7 +80,7 @@
             // picShowHidePassword
             // 
             picShowHidePassword.BackgroundImageLayout = ImageLayout.None;
-            picShowHidePassword.Image = Properties.Resources.eye_open;
+            picShowHidePassword.Image = Properties.Resources.eye_open1;
             picShowHidePassword.Location = new Point(282, 250);
             picShowHidePassword.Name = "picShowHidePassword";
             picShowHidePassword.Size = new Size(24, 19);
