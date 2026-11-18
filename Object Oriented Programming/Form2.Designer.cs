@@ -31,7 +31,7 @@
             pctSignUp = new PictureBox();
             pnlSignUp = new Panel();
             picShowPassword2 = new PictureBox();
-            picShowPassword1 = new PictureBox();
+            picShowPassword3 = new PictureBox();
             chkTerms = new CheckBox();
             txtContactNo = new TextBox();
             lblContactNo = new Label();
@@ -52,7 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)pctSignUp).BeginInit();
             pnlSignUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picShowPassword2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picShowPassword1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picShowPassword3).BeginInit();
             SuspendLayout();
             // 
             // pctSignUp
@@ -69,7 +69,7 @@
             // 
             pnlSignUp.BackColor = Color.White;
             pnlSignUp.Controls.Add(picShowPassword2);
-            pnlSignUp.Controls.Add(picShowPassword1);
+            pnlSignUp.Controls.Add(picShowPassword3);
             pnlSignUp.Controls.Add(chkTerms);
             pnlSignUp.Controls.Add(txtContactNo);
             pnlSignUp.Controls.Add(lblContactNo);
@@ -102,19 +102,19 @@
             picShowPassword2.SizeMode = PictureBoxSizeMode.Zoom;
             picShowPassword2.TabIndex = 25;
             picShowPassword2.TabStop = false;
-            
+            picShowPassword2.Click += picShowPassword2_Click;
             // 
             // picShowPassword1
             // 
-            picShowPassword1.BackColor = Color.Transparent;
-            picShowPassword1.Image = Properties.Resources.eye_open1;
-            picShowPassword1.Location = new Point(280, 347);
-            picShowPassword1.Name = "picShowPassword1";
-            picShowPassword1.Size = new Size(24, 20);
-            picShowPassword1.SizeMode = PictureBoxSizeMode.Zoom;
-            picShowPassword1.TabIndex = 24;
-            picShowPassword1.TabStop = false;
-          
+            picShowPassword3.BackColor = Color.Transparent;
+            picShowPassword3.Image = Properties.Resources.eye_open1;
+            picShowPassword3.Location = new Point(280, 347);
+            picShowPassword3.Name = "picShowPassword1";
+            picShowPassword3.Size = new Size(24, 20);
+            picShowPassword3.SizeMode = PictureBoxSizeMode.Zoom;
+            picShowPassword3.TabIndex = 24;
+            picShowPassword3.TabStop = false;
+            picShowPassword3.Click += picShowPassword3_Click;
             // 
             // chkTerms
             // 
@@ -203,7 +203,6 @@
             btnLogIninSignUp.TabIndex = 10;
             btnLogIninSignUp.Text = "Log In";
             btnLogIninSignUp.UseVisualStyleBackColor = true;
-            
             // 
             // lblAlreadyHaveAnAccount
             // 
@@ -213,7 +212,6 @@
             lblAlreadyHaveAnAccount.Size = new Size(142, 15);
             lblAlreadyHaveAnAccount.TabIndex = 9;
             lblAlreadyHaveAnAccount.Text = "Already have an account?";
-            
             // 
             // btnSignUp
             // 
@@ -284,7 +282,7 @@
             pnlSignUp.ResumeLayout(false);
             pnlSignUp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picShowPassword2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picShowPassword1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picShowPassword3).EndInit();
             ResumeLayout(false);
         }
 
@@ -309,7 +307,7 @@
         private Label lblConfirmPassword;
         private TextBox txtUsername;
         private Label lblUsername;
-        private PictureBox picShowPassword1;
+        private PictureBox picShowPassword3;
         private PictureBox picShowPassword2;
 
         
