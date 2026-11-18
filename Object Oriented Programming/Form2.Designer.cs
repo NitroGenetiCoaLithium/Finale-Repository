@@ -30,6 +30,8 @@
         {
             pctSignUp = new PictureBox();
             pnlSignUp = new Panel();
+            picShowPassword2 = new PictureBox();
+            picShowPassword1 = new PictureBox();
             chkTermsAndConditions = new CheckBox();
             txtContactNo = new TextBox();
             lblContactNo = new Label();
@@ -49,6 +51,8 @@
             lblSignUpValora = new Label();
             ((System.ComponentModel.ISupportInitialize)pctSignUp).BeginInit();
             pnlSignUp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picShowPassword2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picShowPassword1).BeginInit();
             SuspendLayout();
             // 
             // pctSignUp
@@ -64,6 +68,8 @@
             // pnlSignUp
             // 
             pnlSignUp.BackColor = Color.White;
+            pnlSignUp.Controls.Add(picShowPassword2);
+            pnlSignUp.Controls.Add(picShowPassword1);
             pnlSignUp.Controls.Add(chkTermsAndConditions);
             pnlSignUp.Controls.Add(txtContactNo);
             pnlSignUp.Controls.Add(lblContactNo);
@@ -86,6 +92,28 @@
             pnlSignUp.Size = new Size(341, 571);
             pnlSignUp.TabIndex = 2;
             // 
+            // picShowPassword2
+            // 
+            picShowPassword2.Image = Properties.Resources.eye_open;
+            picShowPassword2.Location = new Point(280, 409);
+            picShowPassword2.Name = "picShowPassword2";
+            picShowPassword2.Size = new Size(24, 20);
+            picShowPassword2.SizeMode = PictureBoxSizeMode.Zoom;
+            picShowPassword2.TabIndex = 25;
+            picShowPassword2.TabStop = false;
+            picShowPassword2.Click += picShowPassword2_Click;
+            // 
+            // picShowPassword1
+            // 
+            picShowPassword1.Image = Properties.Resources.eye_open;
+            picShowPassword1.Location = new Point(280, 352);
+            picShowPassword1.Name = "picShowPassword1";
+            picShowPassword1.Size = new Size(24, 20);
+            picShowPassword1.SizeMode = PictureBoxSizeMode.Zoom;
+            picShowPassword1.TabIndex = 24;
+            picShowPassword1.TabStop = false;
+            picShowPassword1.Click += pictureBox1_Click;
+            // 
             // chkTermsAndConditions
             // 
             chkTermsAndConditions.AutoSize = true;
@@ -99,7 +127,7 @@
             // 
             // txtContactNo
             // 
-            txtContactNo.Location = new Point(30, 242);
+            txtContactNo.Location = new Point(30, 235);
             txtContactNo.Name = "txtContactNo";
             txtContactNo.Size = new Size(278, 23);
             txtContactNo.TabIndex = 22;
@@ -107,7 +135,7 @@
             // lblContactNo
             // 
             lblContactNo.AutoSize = true;
-            lblContactNo.Location = new Point(30, 224);
+            lblContactNo.Location = new Point(30, 217);
             lblContactNo.Name = "lblContactNo";
             lblContactNo.Size = new Size(96, 15);
             lblContactNo.TabIndex = 21;
@@ -115,7 +143,7 @@
             // 
             // txtConfirmPassword
             // 
-            txtConfirmPassword.Location = new Point(30, 410);
+            txtConfirmPassword.Location = new Point(30, 408);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.Size = new Size(278, 23);
             txtConfirmPassword.TabIndex = 20;
@@ -123,7 +151,7 @@
             // lblConfirmPassword
             // 
             lblConfirmPassword.AutoSize = true;
-            lblConfirmPassword.Location = new Point(30, 392);
+            lblConfirmPassword.Location = new Point(30, 390);
             lblConfirmPassword.Name = "lblConfirmPassword";
             lblConfirmPassword.Size = new Size(104, 15);
             lblConfirmPassword.TabIndex = 19;
@@ -131,7 +159,7 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(30, 187);
+            txtUsername.Location = new Point(30, 176);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(278, 23);
             txtUsername.TabIndex = 18;
@@ -139,7 +167,7 @@
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(30, 169);
+            lblUsername.Location = new Point(30, 158);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(60, 15);
             lblUsername.TabIndex = 17;
@@ -149,7 +177,7 @@
             // 
             lblMessageSignUp.AutoSize = true;
             lblMessageSignUp.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMessageSignUp.Location = new Point(43, 128);
+            lblMessageSignUp.Location = new Point(43, 113);
             lblMessageSignUp.Name = "lblMessageSignUp";
             lblMessageSignUp.Size = new Size(256, 17);
             lblMessageSignUp.TabIndex = 16;
@@ -159,7 +187,7 @@
             // 
             lblCreateYourAccount.AutoSize = true;
             lblCreateYourAccount.Font = new Font("Georgia", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCreateYourAccount.Location = new Point(30, 94);
+            lblCreateYourAccount.Location = new Point(30, 79);
             lblCreateYourAccount.Name = "lblCreateYourAccount";
             lblCreateYourAccount.Size = new Size(281, 34);
             lblCreateYourAccount.TabIndex = 15;
@@ -200,7 +228,7 @@
             // 
             // txtSignUpPassword
             // 
-            txtSignUpPassword.Location = new Point(30, 354);
+            txtSignUpPassword.Location = new Point(30, 351);
             txtSignUpPassword.Name = "txtSignUpPassword";
             txtSignUpPassword.Size = new Size(278, 23);
             txtSignUpPassword.TabIndex = 6;
@@ -208,7 +236,7 @@
             // lblSignUpPassword
             // 
             lblSignUpPassword.AutoSize = true;
-            lblSignUpPassword.Location = new Point(30, 336);
+            lblSignUpPassword.Location = new Point(30, 333);
             lblSignUpPassword.Name = "lblSignUpPassword";
             lblSignUpPassword.Size = new Size(57, 15);
             lblSignUpPassword.TabIndex = 5;
@@ -216,7 +244,7 @@
             // 
             // txtSignUpEmailAddress
             // 
-            txtSignUpEmailAddress.Location = new Point(30, 296);
+            txtSignUpEmailAddress.Location = new Point(30, 293);
             txtSignUpEmailAddress.Name = "txtSignUpEmailAddress";
             txtSignUpEmailAddress.Size = new Size(278, 23);
             txtSignUpEmailAddress.TabIndex = 4;
@@ -224,7 +252,7 @@
             // lblSignUpEmailAddress
             // 
             lblSignUpEmailAddress.AutoSize = true;
-            lblSignUpEmailAddress.Location = new Point(30, 278);
+            lblSignUpEmailAddress.Location = new Point(30, 275);
             lblSignUpEmailAddress.Name = "lblSignUpEmailAddress";
             lblSignUpEmailAddress.Size = new Size(81, 15);
             lblSignUpEmailAddress.TabIndex = 3;
@@ -234,7 +262,7 @@
             // 
             lblSignUpValora.AutoSize = true;
             lblSignUpValora.Font = new Font("Georgia", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSignUpValora.Location = new Point(136, 50);
+            lblSignUpValora.Location = new Point(136, 35);
             lblSignUpValora.Name = "lblSignUpValora";
             lblSignUpValora.Size = new Size(74, 25);
             lblSignUpValora.TabIndex = 0;
@@ -253,6 +281,8 @@
             ((System.ComponentModel.ISupportInitialize)pctSignUp).EndInit();
             pnlSignUp.ResumeLayout(false);
             pnlSignUp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picShowPassword2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picShowPassword1).EndInit();
             ResumeLayout(false);
         }
 
@@ -277,7 +307,9 @@
         private Label lblConfirmPassword;
         private TextBox txtUsername;
         private Label lblUsername;
+        private PictureBox picShowPassword1;
+        private PictureBox picShowPassword2;
 
-
+        
     }
 }
