@@ -82,7 +82,7 @@ namespace Object_Oriented_Programming
         }
 
 
-       
+
 
         private void txtContactNo_TextChanged(object sender, EventArgs e)
         {
@@ -99,6 +99,14 @@ namespace Object_Oriented_Programming
         private void txtSignUpPassword_TextChanged(object sender, EventArgs e)
         {
             string signUpPassword = txtSignUpPassword.Text;
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            Form3 LandingPageForm = new Form3();
+            LandingPageForm.Show();
+
+            this.Hide();
         }
     }
 }

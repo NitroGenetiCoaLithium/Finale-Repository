@@ -86,7 +86,10 @@ namespace Object_Oriented_Programming
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
+            Form3 LandingPageForm = new Form3();
+            LandingPageForm.Show();
 
+            this.Hide();
         }
     }
 }
