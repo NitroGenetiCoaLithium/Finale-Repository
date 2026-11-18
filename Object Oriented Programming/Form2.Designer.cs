@@ -104,12 +104,12 @@
             picShowPassword2.TabStop = false;
             picShowPassword2.Click += picShowPassword2_Click;
             // 
-            // picShowPassword1
+            // picShowPassword3
             // 
             picShowPassword3.BackColor = Color.Transparent;
             picShowPassword3.Image = Properties.Resources.eye_open1;
             picShowPassword3.Location = new Point(280, 347);
-            picShowPassword3.Name = "picShowPassword1";
+            picShowPassword3.Name = "picShowPassword3";
             picShowPassword3.Size = new Size(24, 20);
             picShowPassword3.SizeMode = PictureBoxSizeMode.Zoom;
             picShowPassword3.TabIndex = 24;
@@ -203,6 +203,7 @@
             btnLogIninSignUp.TabIndex = 10;
             btnLogIninSignUp.Text = "Log In";
             btnLogIninSignUp.UseVisualStyleBackColor = true;
+            btnLogIninSignUp.Click += btnLogIninSignUp_Click;
             // 
             // lblAlreadyHaveAnAccount
             // 
