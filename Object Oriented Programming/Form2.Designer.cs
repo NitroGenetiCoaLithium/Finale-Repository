@@ -33,9 +33,9 @@
             chkTermsAndConditions = new CheckBox();
             txtContactNo = new TextBox();
             lblContactNo = new Label();
-            this.txtConfirmPassword = new TextBox();
-            this.lblConfirmPassword = new Label();
-            this.txtUsername = new TextBox();
+            txtConfirmPassword = new TextBox();
+            lblConfirmPassword = new Label();
+            txtUsername = new TextBox();
             lblUsername = new Label();
             lblMessageSignUp = new Label();
             lblCreateYourAccount = new Label();
@@ -67,9 +67,9 @@
             pnlSignUp.Controls.Add(chkTermsAndConditions);
             pnlSignUp.Controls.Add(txtContactNo);
             pnlSignUp.Controls.Add(lblContactNo);
-            pnlSignUp.Controls.Add(this.txtConfirmPassword);
-            pnlSignUp.Controls.Add(this.lblConfirmPassword);
-            pnlSignUp.Controls.Add(this.txtUsername);
+            pnlSignUp.Controls.Add(txtConfirmPassword);
+            pnlSignUp.Controls.Add(lblConfirmPassword);
+            pnlSignUp.Controls.Add(txtUsername);
             pnlSignUp.Controls.Add(lblUsername);
             pnlSignUp.Controls.Add(lblMessageSignUp);
             pnlSignUp.Controls.Add(lblCreateYourAccount);
@@ -113,28 +113,28 @@
             lblContactNo.TabIndex = 21;
             lblContactNo.Text = "Contact Number";
             // 
-            // txtConfirmPass
+            // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new Point(30, 410);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new Size(278, 23);
-            this.txtConfirmPassword.TabIndex = 20;
+            txtConfirmPassword.Location = new Point(30, 410);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.Size = new Size(278, 23);
+            txtConfirmPassword.TabIndex = 20;
             // 
             // lblConfirmPassword
             // 
-            this.lblConfirmPassword.AutoSize = true;
-            this.lblConfirmPassword.Location = new Point(30, 392);
-            this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new Size(104, 15);
-            this.lblConfirmPassword.TabIndex = 19;
-            this.lblConfirmPassword.Text = "Confirm Password";
+            lblConfirmPassword.AutoSize = true;
+            lblConfirmPassword.Location = new Point(30, 392);
+            lblConfirmPassword.Name = "lblConfirmPassword";
+            lblConfirmPassword.Size = new Size(104, 15);
+            lblConfirmPassword.TabIndex = 19;
+            lblConfirmPassword.Text = "Confirm Password";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new Point(30, 187);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new Size(278, 23);
-            this.txtUsername.TabIndex = 18;
+            txtUsername.Location = new Point(30, 187);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(278, 23);
+            txtUsername.TabIndex = 18;
             // 
             // lblUsername
             // 
@@ -196,6 +196,7 @@
             btnSignUp.TabIndex = 8;
             btnSignUp.Text = "Sign Up";
             btnSignUp.UseVisualStyleBackColor = false;
+            btnSignUp.Click += btnSignUp_Click;
             // 
             // txtSignUpPassword
             // 
