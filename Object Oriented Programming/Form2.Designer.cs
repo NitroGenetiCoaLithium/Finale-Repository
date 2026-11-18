@@ -102,7 +102,7 @@
             picShowPassword2.SizeMode = PictureBoxSizeMode.Zoom;
             picShowPassword2.TabIndex = 25;
             picShowPassword2.TabStop = false;
-            
+            picShowPassword2.Click += picShowPassword1_Click;
             // 
             // picShowPassword1
             // 
@@ -114,7 +114,7 @@
             picShowPassword1.SizeMode = PictureBoxSizeMode.Zoom;
             picShowPassword1.TabIndex = 24;
             picShowPassword1.TabStop = false;
-          
+            picShowPassword1.Click += picShowPassword1_Click;
             // 
             // chkTerms
             // 
@@ -203,7 +203,6 @@
             btnLogIninSignUp.TabIndex = 10;
             btnLogIninSignUp.Text = "Log In";
             btnLogIninSignUp.UseVisualStyleBackColor = true;
-            
             // 
             // lblAlreadyHaveAnAccount
             // 
@@ -213,7 +212,6 @@
             lblAlreadyHaveAnAccount.Size = new Size(142, 15);
             lblAlreadyHaveAnAccount.TabIndex = 9;
             lblAlreadyHaveAnAccount.Text = "Already have an account?";
-            
             // 
             // btnSignUp
             // 
