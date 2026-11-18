@@ -17,7 +17,8 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='tbl_logInfo' and xtype='U')
 
 -- Insert a default test account so everyone can log in immediately
 
-    INSERT INTO tbl_logInfo (user_name, pass_word) VALUES ('admin', '123');
+    INSERT INTO tbl_logInfo (user_name, pass_word) VALUES ('nat', '123');
 
 drop table tbl_logInfo;
 select * from tbl_logInfo;
+
